@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+        font-size: 16px;
+        font-family: "Microsoft YaHei","微软雅黑","Arial,Geneva,sans-serif";
+        color: #344659;
+        overflow-x: hidden;
+        min-width: 1200px;
+    }
+    a,button{
+        cursor:pointer;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, p, blockquote, th, td, a, img, span {
+        margin: 0;
+        padding: 0;
+    }
+    ol,ul,li{
+        list-style: none;
+    }
+    .nav{
+        height: 78px;
+        position: relative;
+    }
+
+    .nav-home{
+        position: absolute;
+        left: 30px;
+        top: 8px;
+        height: 70px;
+        /*width: 400px;*/
+    }
+    .home{
+        display: inline-block;
+        height: 67px;
+        width: 87px;
+        background: url("imagine/logo_01.jpg") no-repeat center/cover;
+    }
+    .nav-desc{
+        display: inline-block;
+        text-align: left;
+        position: relative;
+        bottom: 16px;
+        font-size: 0;
+        line-height: 0;
+    }
+    .nav-ch{
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .nav-en{
+        display: inline-block;
+        height: 16px;
+        line-height: 16px;
+        font-size: 14px;
+        color: #9F9F9F;
+    }
+    .nav ul{
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    .nav-li{
+        color: #909090;
+        margin: 5px 0;
+        padding: 20px 25px;
+        /*border-right: 1px solid #6EB6FA;*/
+        display: inline-block;
+    }
+    /*.nav-li:last-child{*/
+        /*border-right: 2px solid #4586f3;*/
+    /*}*/
+    .nav-li a{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        color: #909090;
+        width: 70px;
+        position: relative;
+    }
+    .nav-li a:hover{
+        border-bottom: 2px solid #00c0FF;
+    }
+    .pic{
+        overflow:hidden;
+        margin-bottom: -30px;
+    }
+    .pic img{
+        max-width: 100%;
+    }
+    /*.nav-li{*/
+
+
+    /*}*/
+    /*.nav-li a:hover ~ .nav-li a::before{*/
+    /*left: 0;*/
+    /*}*/
+    /*.nav-li a:hover::before{*/
+    /*width: 100%;*/
+    /*left: 0;*/
+    /*}*/
+    /*.nav-li a::before{*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 100%;*/
+    /*width: 0;*/
+    /*height: 100%;*/
+    /*border-bottom: 2px solid #00c0FF;*/
+    /*-webkit-transition: .2s all linear ;*/
+    /*-moz-transition: .2s all linear ;*/
+    /*-ms-transition: .2s all linear ;*/
+    /*-o-transition: .2s all linear ;*/
+    /*transition: .2s all linear ;*/
+    /*}*/
+
+    .tt{
+        position: relative;
+        width: 1300px;
+        margin: 0 auto;
+        /*left: 100px; 会保留文档结构*/
+    }
+    .wrap{
+        position: relative;
+        top: 146px;
+        transform: rotate(45deg) translate3d(0,0,0);
+        display: inline-block;
+        /*transition: transform 300ms ease-out;*/
+        width: 150px;
+        margin: 0 12px;
+    }
+    .wrap:nth-child(even) {
+        width: 60px;
+        margin-right: -10px;
+        transform: rotate(225deg) translate3d(40px, 160px, 0);
+    }
+    .crop{
+        position:relative;
+        width: 240px;
+        height: 240px;
+        margin: 0;
+        display: block;
+        overflow: hidden;
+        transform: skew(15deg,15deg) translate3d(0,0,0);
+        /*background: #4586f3;*/
+    }
+    .triangle{
+        width: 270px;
+        height: 270px;
+        position: absolute;
+        left: -55%;
+        transform: skew(-15deg,-15deg) rotate(-45deg);
+        opacity: .7;
+        background: #00A0E9;
+        margin: 36px 0 0 36px;
+        transition: opacity 300ms ease-in-out;
+        top: -56%;
+        /*line-height: 270px; ??? 这块写这个干啥*/
+        text-align: center;
+        color: #4586f3;
+    }
+    .select-desc{
+        position: relative;
+        width: 180px;
+        height: 180px;
+        margin:75px auto 15px auto;
+        font-size: 0;
+        color: #fff;
+    }
+    .select-desc2{
+        position: relative;
+        color: #fff;
+        width: 180px;
+        height: 180px;
+        font-size: 0;
+        margin: 75px auto 15px auto;
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+    .select-desc .mdui-icon{
+        font-size: 40px;
+    }
+    .select-desc2 .mdui-icon{
+        font-size: 40px;
+    }
+    .select-desc-pic{
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        position: relative;
+        top: 50px;
+    }
+    .select-desc-pic2{
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .select-desc-ch{
+        position: relative;
+        top: 80px;
+        width: 100px;
+        height: 30px;
+        margin: 0 auto;
+        font-size: 25px;
+    }
+    .select-desc-ch2{
+        position: relative;
+        top: 30px;
+        width: 100px;
+        height: 30px;
+        margin: 0 auto;
+        font-size: 25px;
+    }
+    .select-desc-en{
+        font-family: "Microsoft Yi Baiti";
+        position: relative;
+        top: 80px;
+        width: 150px;
+        font-size: 15px;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+    .select-desc-en2{
+        font-family: "Microsoft Yi Baiti";
+        position: relative;
+        top: 30px;
+        width: 150px;
+        font-size: 15px;
+        white-space: nowrap;
+        margin: 0 auto;
+    }
+    .rec{
+        width: 750px;
+        height: 230px;
+        transform:skewX(-30deg);
+        display: inline-block;
+        background: #DBDBDB;
+        position: relative;
+        top: 36px;
+        left: 80px;
+    }
+    .rec1{
+        width: 705px;
+        height: 210px;
+        margin: 10px 50px;
+        background: #fff;
+        /*transform:skewX(30deg);*/
+        position: relative;
+    }
+    .rec-news{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        color: #9F9F9F;
+        width: 600px;
+        -webkit-transform: skewX(30deg);
+        -moz-transform: skewX(30deg);
+        -ms-transform: skewX(30deg);
+        -o-transform: skewX(30deg);
+        transform: skewX(30deg);
+    }
+    .rec-news-content{
+        position: absolute;
+        top: 35px;
+        left: 10px;
+        height: 190px;
+        color: #9F9F9F;
+        width: 600px;
+
+    }
+    .rec-content-left{
+        width: 450px;
+        height: 190px;
+        float: left;
+        -webkit-transform: skewX(30deg);
+        -moz-transform: skewX(30deg);
+        -ms-transform: skewX(30deg);
+        -o-transform: skewX(30deg);
+        transform: skewX(30deg);
+    }
+    .rec-left-news{
+        height: 35px;
+        font-size: 18px;
+
+    }
+    .rec-left-news a{
+        color: #9F9F9F;
+    }
+    .rec-content-right{
+        width: 100px;
+        height: 190px;
+        float: right;
+        -webkit-transform: skewX(30deg);
+        -moz-transform: skewX(30deg);
+        -ms-transform: skewX(30deg);
+        -o-transform: skewX(30deg);
+        transform: skewX(30deg);
+    }
+    .rec-right-date{
+        width: 100px;
+        height: 35px;
+        font-size: 18px;
+    }
+    .rec-ch{
+        width: 100px;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        text-align: center;
+    }
+    .rec-en{
+        width: 400px;
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        border-bottom: 1px solid #DBDBDB;
+    }
+    .rec-more{
+        height: 24px;
+        line-height: 24px;
+        display: inline-block;
+        text-align: center;
+    }
+    .rec-more a{
+        color: #9F9F9F;
+    }
+    .clear{
+        position: absolute;
+        right: -90px;
+        width: 142px;
+        height: 240px;
+        top: 40px;
+        background: #fff;
+    }
+    .photoWall{
+        min-width: 1400px;
+        margin: 60px 0 0 0;
+        position: relative;
+    }
+    .photoWall-tt{
+        width: 1330px;
+        height: 500px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .photoWall-left{
+        position: relative;
+        bottom: 0;
+        left: 40px;
+        width: 700px;
+        height: 200px;
+        display: inline-block;
+        text-align: center;
+        font-size: 0;
+    }
+    .photoWall-left img{
+        display: block;
+        margin: 0 auto;
+        height: 400px;
+    }
+    .photoWall-top{
+        border: 3px solid #13A5AB;
+        width: 696px;
+        height: 400px;
+    }
+    .photoWall-top img{
+        display: none;
+    }
+    .photoWall-top-pic{
+        display: inline-block;
+        height: 65px;
+        width: 703px;
+        background: linear-gradient(to right,#fff 85%,#40c7c4 15%);
+    }
+    .photoWall-top-pic img{
+        height: 25px;
+        margin:20px auto;
+    }
+    .photoWall-circle{
+        position: absolute;
+        height: 10px;
+        top: 440px;
+        left: 250px;
+    }
+    .photoWall-circle-num{
+        width: 10px;
+        height: 10px;
+        margin: 0 20px;
+        border: 1px solid #9F9F9F;
+        display: inline-block;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        background: transparent;
+    }
+    .photoWall-middle{
+        display: inline-block;
+        position: relative;
+        left: 38px;
+        top: 65px;
+    }
+    .photoWall-middle img{
+        height:130px ;
+    }
+    .photoWall-right{
+        width: 500px;
+        position: relative;
+        display: inline-block;
+        margin: 0 40px 0 60px;
+        font-family: "Microsoft YaHei UI";
+        text-align: justify;
+        left: 700px;
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .photoWall-right-desc{
+        display: none;
+        -webkit-transition: display 1s linear ;
+        -moz-transition: display 1s linear ;
+        -ms-transition: display 1s linear ;
+        -o-transition: display 1s linear ;
+        transition: display 1s linear ;
+    }
+    .pic2{
+        position: absolute;
+        bottom: -300px;
+        z-index: -2;
+    }
+    .pic2 img{
+        max-width: 100%;
+    }
+    .rew{
+        width: 1200px;
+        margin: 400px auto 0 auto;
+        position: relative;
+    }
+    .reward{
+        width: 200px;
+        height: 400px;
+        display: inline-block;
+        margin-right: 70px;
+    }
+    .reward-pic img{
+        width: 120px;
+    }
+    .reward-pic{
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 50px auto;
+    }
+    .reward-desc{
+        position: relative;
+        font-size: 0;
+    }
+    .rew-desc-left{
+        background: #27AEEB;
+        display: inline-block;
+        width:100px;
+        height: 250px;
+    }
+    .rew-desc-right{
+        background: #00A0E9;
+        display: inline-block;
+        width:100px;
+        height: 250px;
+    }
+    .rew-desc{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+    }
+    .rew-desc span{
+        margin: 0 auto;
+        display: block;
+        border-bottom:2px solid #fff ;
+        height: 50px;
+        font-size: 20px;
+        color: #fff;
+        line-height: 50px;
+        width: 180px;
+        text-align: center;
+    }
+    .reward-right{
+        width: 100px;
+        margin-left: -15px;
+        position: relative;
+        display: inline-block;
+    }
+    .reward-right-set{
+        width: 25px;
+        border-right: 2px solid #13A5AB;
+        height: 354px;
+        color: #13A5AB;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+    .reward-right-pic{
+        width: 120px;
+        margin: 0 0 0 9px;
+    }
+    .reward-right-pic img{
+        width: 120px;
+    }
+    .people-mountain{
+        border-top: 2px solid #13A5AB;
+        margin: 100px auto 70px auto;
+        position: relative;
+    }
+    .people-require{
+        position: absolute;
+        top: -55px;
+        width: 100%;
+    }
+    .div{
+        width: 200px;
+        position: relative;
+        margin: 0 auto;
+        height: 101px;
+    }
+    .people-mountain-desc{
+        position: absolute;
+        top: 43px;
+        left: 98px;
+        font-size: 18px;
+        color: #fff;
+    }
+    .people-mountain img{
+        width: 200px;
+        display: block;
+    }
+    .people{
+        width: 900px;
+        height: 400px;
+        position: relative;
+        text-align: center;
+        line-height: 400px;
+        margin: 0 auto 100px auto;
+    }
+    .people-data{
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        top: 80px;
+        left: 280px;
+        line-height: 25px;
+        font-size: 0;
+        text-align: left;
+    }
+    .people-data1{
+        display: inline-block;
+        margin: 0 10px;
+        opacity: 0;
+        -webkit-transition: opacity .3s linear;
+        -moz-transition:  opacity .3s linear;
+        -ms-transition: opacity .3s linear;
+        -o-transition: opacity .3s linear;
+        transition: opacity .3s linear;
+    }
+    .people-data-incline{
+        width: 2px;
+        height: 50px;
+        background: #13B5B1;
+        display: inline-block;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    .people-data-line{
+        width: 35px;
+        display: inline-block;
+        margin: 0 0 0 16px;
+        border-top: 2px solid #13B5B1;
+        height: 42px;
+    }
+    .people-data-num{
+        display: inline-block;
+        width: 20px;
+        color: #13B5B1;
+        font-size: 16px;
+        position: relative;
+        bottom: 42px;
+    }
+    .people-battery{
+        border: 2px solid #13A5AB;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        width: 298px;
+        height: 70px;
+        display: inline-block;
+    }
+
+    .people-battery-num{
+        height: 60px;
+        width: 22px;
+        margin: 5px 4px;
+        background: red;
+        float: left;
+        -webkit-animation: change 5s infinite;
+        -o-animation: change 5s infinite;
+        animation: change 5s infinite;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        opacity: 0;
+    }
+    @keyframes change {
+        0%{background:red}
+        30%{background:	#FF4500}
+        60%{background:yellow}
+        100%{background:#13A5AB}
+    }
+    .people-battery-right{
+        background: #13A5AB;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        width: 8px;
+        height: 35px;
+        display: inline-block;
+        position: relative;
+        bottom: 21px;
+    }
+    .people-popularity{
+        width: 300px;
+        height: 25px;
+        position: absolute;
+        top: 208px;
+        left: 245px;
+        line-height: 25px;
+    }
+    .people-popu{
+        display: inline-block;
+        margin: 0 30px;
+        font-size: 16px;
+        color: #13B5B1;
+    }
+    .people-desc{
+        margin: 5px auto;
+        font-size: 18px;
+        color: #13A5AB;
+        text-align: center;
+        height: 22px;
+        line-height: 22px;
+        position: absolute;
+        top: 230px;
+        width: 800px;
+    }
+    .school{
+        border-top:2px solid #13A5AB;
+        padding: 60px 0 50px;
+        background: #fff;
+        position: relative;
+    }
+    .school-pic{
+        position: absolute;
+        top: -55px;
+        width: 100%;
+    }
+    .school-pic img{
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+    .school_line{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .line{
+        width: 1010px;
+        margin: 0 auto;
+    }
+    .line_next{
+        width: 120px;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: 20px;
+        /*padding: 0 22px;*/
+        margin-bottom: 30px;
+    }
+    .line_next img{
+        width: 120px;
+        height: 120px;
+    }
+    .school-title{
+        display: block;
+        width: 100px;
+        text-align: center;
+        color: #13A5AB;
+        font-size: 20px;
+        margin: 0 auto;
+    }
+    .footer{
+        width: 100%;
+        height: 200px;
+        position: relative;
+        padding: 1px 0;
+        background: linear-gradient(135deg,#1f1c1c 60%,#000 40%);
+        color: #fff;
+    }
+    .footer-slant{
+        width: 20px;
+        position: absolute;
+        background: #000;
+        top: 40px;
+        left: 58%;
+        height: 120px;
+        -webkit-transform: skewX(135deg);
+        -moz-transform: skewX(135deg);
+        -ms-transform: skewX(135deg);
+        -o-transform: skewX(135deg);
+        transform: skewX(135deg);
+    }
+    .footer-pic{
+        height: 180px;
+        width: 200px;
+        display: inline-block;
+        border-right: 1px solid #fff;
+        margin: 10px 0;
+    }
+    .footer-pic img{
+        height: 100px;
+        margin: 40px 12px;
+        float: left;
+    }
+    .footer-pic-desc{
+        width: 16px;
+        margin: 0 10px;
+        line-height: 12px;
+        position: relative;
+        top: 20px;
+        font-size: 12px;
+        color: #fff;
+        display: inline-block;
+    }
+    .footer-left{
+        display: inline-block;
+        position: relative;
+        top: -25px;
+    }
+    .footer-left-about{
+        height: 25px;
+        position: relative;
+    }
+    .footer-ch{
+        font-size: 20px;
+        line-height: 25px;
+        margin: 0 15px;
+        display: inline-block;
+    }
+    .footer-en{
+        display: inline-block;
+        font-size: 16px;
+        border-bottom: 1px solid #fff;
+        width: 300px;
+    }
+    .footer-left-next{
+        font-size: 14px;
+        line-height: 20px;
+        margin: 20px 0 0 15px;
+    }
+    .footer-right{
+        display: inline-block;
+        position: absolute;
+        right:40px;
+        height: 160px;
+        margin: 20px 0;
+    }
+    .footer-qr{
+        position: relative;
+    }
+    .footer-qr img{
+        width: 100px;
+        position: relative;
+        margin-left: 200px;
+    }
+    .footer-right-next{
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        text-align: right;
+    }
+</style>
+<script src="echarts.min.simple.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>山东省软件设计大赛</title>
+</head>
+<body>
+<div class="nav">
+    <div class="nav-home">
+        <a href="#" class="home"></a>
+        <div class="nav-desc">
+            <div class="nav-ch">山东省大学生软件设计大赛</div>
+            <br>
+            <div class="nav-en">SHANDONG UNDERGRADUATE SOFTWARE DESIGN CONTEST</div>
+        </div>
+    </div>
+    <ul>
+        <li class="nav-li">
+            <a href="">首页</a>
+        </li>
+        <li class="nav-li">
+            <a href="">大赛简介</a>
+        </li>
+        <li class="nav-li">
+            <a href="">新闻动态</a>
+        </li>
+        <li class="nav-li">
+            <a href="">提交作品</a>
+        </li>
+        <li class="nav-li">
+            <a href="">在线报名</a>
+        </li>
+        <li class="nav-li">
+            <a href="">获奖查询</a>
+        </li>
+    </ul>
+</div>
+<div class="index">
+    <div class="pic">
+        <img src="imagine/banner_03.jpg" alt="">
+    </div>
+    <div class="select">
+        <div class="tt">
+            <div class="wrap">
+                <div class="crop" ><!--#00A0E9-->
+                    <div class="triangle">
+                        <div class="select-desc">
+                            <div class="select-desc-pic">
+                                <i class="mdui-icon material-icons">send</i>
+                            </div>
+                            <div class="select-desc-ch">大赛历史</div>
+                            <div class="select-desc-en">CONTEST HISTORY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="crop" >
+                    <div class="triangle" style="background: #13B5B1">
+                        <div class="select-desc2">
+                            <div class="select-desc-pic2">
+                                <i class="mdui-icon material-icons">send</i>
+                            </div>
+                            <div class="select-desc-ch2">专家寄语</div>
+                            <div class="select-desc-en2">EXPORT WISHES</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="crop">
+                    <div class="triangle">
+                        <div class="select-desc">
+                            <div class="select-desc-pic">
+                                <i class="mdui-icon material-icons">send</i>
+                            </div>
+                            <div class="select-desc-ch">在线报名</div>
+                            <div class="select-desc-en">ONLINE REGISTRATION</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="crop">
+                    <div class="triangle" style="background: #13B5B1">
+                        <div class="select-desc2">
+                            <div class="select-desc-pic2">
+                                <i class="mdui-icon material-icons">send</i>
+                            </div>
+                            <div class="select-desc-ch2">优才计划</div>
+                            <div class="select-desc-en2">ONLINE LEARNING</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rec">
+                <div class="rec1">
+                    <div class="rec-news">
+
+                        <div class="rec-ch">新闻动态</div>
+                        <div class="rec-en">
+                            News And Trends
+
+                        </div>
+                        <div class="rec-more"><a href="">More</a></div>
+                    </div>
+                    <div class="rec-news-content">
+                        <div class="rec-content-left">
+                            <div class="rec-left-news">
+                                <a href="#">山东省第一届cos临摹绘画大赛于科技馆正式举办</a>
+                            </div>
+                            <div class="rec-left-news">
+                                <a href="#">山东省第一届cos临摹绘画大赛于科技馆正式举办</a>
+                            </div>
+                            <div class="rec-left-news">
+                                <a href="#">山东省第一届cos临摹绘画大赛于科技馆正式举办</a>
+                            </div>
+                            <div class="rec-left-news">
+                                <a href="#">山东省第一届cos临摹绘画大赛于科技馆正式举办</a>
+                            </div>
+                            <div class="rec-left-news">
+                                <a href="#">山东省第一届cos临摹绘画大赛于科技馆正式举办</a>
+                            </div>
+                        </div>
+                        <div class="rec-content-right">
+                            <div class="rec-right-date">2018-7-8</div>
+                            <div class="rec-right-date">2018-7-8</div>
+                            <div class="rec-right-date">2018-7-8</div>
+                            <div class="rec-right-date">2018-7-8</div>
+                            <div class="rec-right-date">2018-7-8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="photoWall">
+        <div class="photoWall-tt">
+
+            <div class="photoWall-left">
+                <div class="photoWall-top-pic">
+                    <img src="imagine/photowall_01.jpg" alt="">
+                    <!--<div class="photoWall-top-color"></div>-->
+                </div>
+                <div class="photoWall-top">
+                    <img src="imagine/photo_1.jpg" alt="">
+                    <img src="imagine/photo_1.jpg" alt="">
+                    <img src="imagine/photo_1.jpg" alt="">
+                    <img src="imagine/photo_1.jpg" alt="">
+                </div>
+                <div class="photoWall-circle">
+                    <div class="photoWall-circle-num"></div>
+                    <div class="photoWall-circle-num"></div>
+                    <div class="photoWall-circle-num"></div>
+                    <div class="photoWall-circle-num"></div>
+                </div>
+            </div>
+            <div class="photoWall-middle">
+                <img src="imagine/toulan_01.jpg" alt="">
+            </div>
+            <div class="photoWall-right">
+                <div class="photoWall-right-desc">
+                    《基于FunCode平台的程序设计创新》命题组决赛圆满结束
+                    2017年10月21日上午9:00，在山东省大学生软件设计大赛组委会、
+                    济南计算机学会、中国石油大学以及上海锐格软件有限公司和各高
+                    校指导老师、同学们的共同努力下，第十五届山东省大学生软件设
+                    计大赛《基于FunCode平台的程序设计创新》命题组决赛在中国石
+                    油大学（华东）工科楼E 1011会议室拉开帷幕。邀请到的嘉宾有：
+                    中国石油大学（华东）付文霞、山东科技职业学院邓所春、中国石
+                    油大学胜利学院彭丽娟、济南职业学院徐书海以及上海锐格软件有
+                    限公司的领导杨俊和工程师纪雷。
+                </div>
+                <div class="photoWall-right-desc">
+                    《基于FunCode平台的程序设计创新》命题组决赛圆满结束
+                    2017年10月21日上午9:00，在山东省大学生软件设计大赛组委会、
+                    济南计算机学会、中国石油大学以及上海锐格软件有限公司和各高
+                    校指导老师、同学们的共同努力下，第十五届山东省大学生软件设
+                    计大赛《基于FunCode平台的程序设计创新》命题组决赛在中国石
+                    油大学（华东）工科楼E 1011会议室拉开帷幕。邀请到的嘉宾有：
+                    中国石油大学（华东）付文霞、山东科技职业学院邓所春、中国石
+                    油大学胜利学院彭丽娟、济南职业学院徐书海以及上海锐格软件有
+                    限公司的领导杨俊和工程师纪雷11111111111。
+                </div>
+                <div class="photoWall-right-desc">
+                    《基于FunCode平台的程序设计创新》命题组决赛圆满结束
+                    2017年10月21日上午9:00，在山东省大学生软件设计大赛组委会、
+                    济南计算机学会、中国石油大学以及上海锐格软件有限公司和各高
+                    校指导老师、同学们的共同努力下，第十五届山东省大学生软件设
+                    计大赛《基于FunCode平台的程序设计创新》命题组决赛在中国石
+                    油大学（华东）工科楼E 1011会议室拉开帷幕。邀请到的嘉宾有：
+                    中国石油大学（华东）付文霞、山东科技职业学院邓所春、中国石
+                    油大学胜利学院彭丽娟、济南职业学院徐书海以及上海锐格软件有
+                    限公司的领导杨俊和工程师纪雷22222222222。
+                </div>
+                <div class="photoWall-right-desc">
+                    《基于FunCode平台的程序设计创新》命题组决赛圆满结束
+                    2017年10月21日上午9:00，在山东省大学生软件设计大赛组委会、
+                    济南计算机学会、中国石油大学以及上海锐格软件有限公司和各高
+                    校指导老师、同学们的共同努力下，第十五届山东省大学生软件设
+                    计大赛《基于FunCode平台的程序设计创新》命题组决赛在中国石
+                    油大学（华东）工科楼E 1011会议室拉开帷幕。邀请到的嘉宾有：
+                    中国石油大学（华东）付文霞、山东科技职业学院邓所春、中国石
+                    油大学胜利学院彭丽娟、济南职业学院徐书海以及上海锐格软件有
+                    限公司的领导杨俊和工程师纪雷32222222222。
+                </div>
+            </div>
+        </div>
+        <div class="pic2">
+            <img src="imagine/pic2_01.jpg" alt="">
+        </div>
+    </div>
+    <div class="rew">
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>特等奖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>特等奖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>特等奖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>特等奖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward-right">
+            <div class="reward-right-set">奖项设置</div>
+            <div class="reward-right-pic">
+                <img src="imagine/star_03.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="people-mountain">
+        <div class="people-require">
+            <div class="div">
+                <div class="people-mountain-desc">参赛人数</div>
+                <img src="imagine/mountain_01.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="people">
+        <!--<div class="people-data">-->
+            <!--<div class="people-data1">-->
+                <!--<div class="people-data-incline"></div>-->
+                <!--<div class="people-data-line"></div>-->
+                <!--<div class="people-data-num">2010</div>-->
+            <!--</div>-->
+            <!--<div class="people-data1">-->
+                <!--<div class="people-data-incline"></div>-->
+                <!--<div class="people-data-line"></div>-->
+                <!--<div class="people-data-num">2014</div>-->
+            <!--</div>-->
+            <!--<div class="people-data1">-->
+                <!--<div class="people-data-incline"></div>-->
+                <!--<div class="people-data-line"></div>-->
+                <!--<div class="people-data-num">2017</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="people-battery">-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+            <!--<div class="people-battery-num"></div>-->
+        <!--</div>-->
+        <!--<div class="people-battery-right"></div>-->
+        <!--<div class="people-popularity">-->
+            <!--<div class="people-popu">2000</div>-->
+            <!--<div class="people-popu">4000</div>-->
+            <!--<div class="people-popu">6000</div>-->
+        <!--</div>-->
+        <!--<div class="people-desc">历届参赛人数</div>-->
+    </div>
+    <div class="school">
+        <div class="school-pic">
+            <div class="div">
+                <div class="people-mountain-desc">参赛院校</div>
+                <img src="imagine/mountain_01.jpg" alt="">
+            </div>
+        </div>
+        <div class="school_line">
+            <div class="line">
+                <div class="line_next">
+                    <img src="imagine/sd.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/zghy.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/zgshy.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/qlgy.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdshf.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdny.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/qd.jpg" alt="">
+                </div>
+            </div>
+            <div class="line">
+                <div class="line_next">
+                    <img src="imagine/sdkj.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/qdkj.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/jn.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdlg.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/qfshf.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/yt.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdcj.jpg" alt="">
+                </div>
+            </div>
+            <div class="line">
+                <div class="line_next">
+                    <img src="imagine/qdlg.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/tsy.png" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/ld.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/lch.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdjz.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdzhyy.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/qdny.jpg" alt="">
+                </div>
+            </div>
+            <div class="line">
+                <div class="line_next">
+                    <img src="imagine/ly.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdgsh.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/sdjt.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/wfy.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/jny.jpg" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/bz.png" alt="">
+                </div>
+                <div class="line_next">
+                    <img src="imagine/bzy.jpg" alt="">
+                </div>
+            </div>
+            <a class="school-title" href="#">更多院校</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-slant"></div>
+        <div class="footer-pic">
+            <img src="imagine/footer_03.jpg" alt="">
+            <div class="footer-pic-desc">山东省大学生软件设计大赛</div>
+        </div>
+        <div class="footer-left">
+            <div class="footer-left-about">
+                <div class="footer-ch">联系我们</div>
+                <div class="footer-en">Contact  us</div>
+            </div>
+            <div class="footer-left-next">
+                电话：0531-86391234 <br>
+                Email：sdsdxskjj@163.com <br>
+                技术支持：17865166210 <br>
+                地址：山东省济南市历城区舜华路1500号
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-qr">
+                <img src="imagine/qrcode_01.jpg" alt="">
+            </div>
+            <div class="footer-right-next">
+                Copyright © 2018 山东省大学生软件设计大赛 <br>
+                鲁ICP备13008542号-3
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var date = [2010,2011,2012,2013,2014,2015,2016,2017];
+    var data = [2000,3000,4000,5000,6000,7000,8000,9000]
+    option = {
+        tooltip: {
+            trigger: 'axis'
+        },
+        title: {
+            left: 'center',
+            text: '历年大赛参加人数'
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: date
+        },
+        yAxis: {
+            type: 'value',
+            boundaryGap: [0, '100%']
+        },
+        dataZoom: [{
+            type: 'inside',
+            start: 0,
+            end: 100
+        }, {
+            start: 0,
+            end: 10,
+            handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+            handleSize: '80%',
+            handleStyle: {
+                color: '#fff',
+                shadowBlur: 3,
+                shadowColor: 'rgba(0, 0, 0, 0.6)',
+                shadowOffsetX: 2,
+                shadowOffsetY: 2
+            }
+        }],
+        series: [
+            {
+                name:'参赛人数',
+                type:'line',
+                smooth:true,
+                symbol: 'none',
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgb(255, 70, 131)'
+                    }
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgb(255, 158, 68)'
+                        }, {
+                            offset: 1,
+                            color: 'rgb(255, 70, 131)'
+                        }])
+                    }
+                },
+                data: data
+            }
+        ]
+    };
+    var myChart = echarts.init(document.getElementsByClassName("people")[0]);
+    console.log(myChart);
+    myChart.setOption(option);
+
+    //照片墙轮播
+    var photowall_pic = document.getElementsByClassName("photoWall-top")[0].getElementsByTagName("img");
+    var photowall_desc = document.getElementsByClassName("photoWall-right-desc");
+    var photowall_circle = document.getElementsByClassName("photoWall-circle-num");
+
+    photowall_pic[0].style.display = "block";
+    photowall_desc[0].style.display = "block";
+    photowall_circle[0].style.background = "#fff";
+    var photowall_num = 0;
+
+    function auto_change(n){
+        if (photowall_num === 0) {
+            photowall_desc[3].style.display = "none";
+            photowall_desc[0].style.display = "block";
+            photowall_pic[3].style.display = "none";
+            photowall_pic[0].style.display = "block";
+            photowall_circle[3].style.background = "transparent";
+            photowall_circle[0].style.background = "#fff";
+            fadeIn(photowall_pic[0]);
+            fadeIn(photowall_desc[0]);
+            photowall_num++;
+            return;
+        }
+        photowall_pic[n-1].style.display = "none";
+        photowall_pic[n].style.display = "block";
+        photowall_desc[n - 1].style.display = "none";
+        photowall_desc[n].style.display = "block";
+        fadeIn(photowall_pic[n]);
+        fadeIn(photowall_desc[n]);
+        photowall_circle[n-1].style.background = "transparent";
+        photowall_circle[n].style.background = "#fff";
+        photowall_num++;
+        if (photowall_num === 4)
+            photowall_num = 0;
+    }
+    function fadeIn(elem){
+        setOpacity(elem,0); //初始全透明
+        for(var i = 0;i<=20;i++){ //透明度改变 20 * 5 = 100
+            (function(i){
+                var level = i * 5; //透明度每次变化值
+                setTimeout(function(){
+                    setOpacity(elem, level)
+                },i*30);
+            })(i);
+        }
+    }
+    function setOpacity(elem, level) {  //设置透明度
+        elem.style.opacity = level/100;
+    }
+    var photo_set = setInterval("auto_change(photowall_num)",3000);
+    var photowall_event = document.getElementsByClassName("photoWall-tt");
+    photowall_event[0].addEventListener("mouseover",function () {
+        clearInterval(photo_set);
+    });
+    photowall_event[0].addEventListener("mouseout",function () {
+        photo_set = setInterval("auto_change(photowall_num)",3000);
+    });
+    for(let i = 0;i<4;i++)
+    {
+        (function (k) {
+            photowall_circle[k].addEventListener("click",function () {
+                for(let i = 0;i<4;i++)
+                {
+                    photowall_circle[i].style.background = "transparent";
+                    photowall_pic[i].style.display = "none";
+                    photowall_desc[i].style.display = "none";
+                }
+                photowall_circle[k].style.background = "#fff";
+                photowall_pic[k].style.display = "block";
+                photowall_desc[k].style.display = "block";
+            })
+        })(i)
+    }
+    //弃用的电池动画
+    // var battery = document.getElementsByClassName("people-battery-num");
+    // var data = document.getElementsByClassName("people-data1");
+    // var num = 0;
+    // var add_num;
+    // function clear_color(){
+    //      add_num = setInterval("add_battery(num)",500);
+    // }
+    // function add_battery(n){
+    //     battery[n].style.opacity = 1;
+    //     num = n+1;
+    //     if(num === 2)
+    //     {
+    //         data[2].style.opacity = 0;
+    //         data[0].style.opacity = 1;
+    //     }
+    //     if(num === 5)
+    //     {
+    //         data[0].style.opacity = 0;
+    //         data[1].style.opacity = 1;
+    //     }
+    //     if(num === 8)
+    //     {
+    //         data[1].style.opacity = 0;
+    //         data[2].style.opacity = 1;
+    //     }
+    //     if(num === battery.length)
+    //     {
+    //         num = 0;
+    //         clearInterval(add_num);
+    //         for(let i = 0;i<battery.length;i++)
+    //             battery[i].style.opacity = 0;
+    //     }
+    // }
+    // clear_color();
+    // setInterval("clear_color()",5000)
+</script>
+</body>
+</html>
