@@ -27,10 +27,11 @@
         }
         .nav-pic{
             height: 60px;
+            background: #fff;
         }
         .home{
             display: inline-block;
-            height: 67px;
+            height: 60px;
             width: 87px;
             background: url("image/logo_01.jpg") no-repeat center/cover;
         }
@@ -72,12 +73,213 @@
             color: #fff;
             font-weight: bold;
         }
+        .nav-li a{
+            color: #fff;
+        }
         .nav-li:nth-child(1){
             margin-left: 40px;
         }
+        .index-back{
+            position: absolute;
+            top: 0;
+            z-index: -1;
+            width: 100%;
+        }
+        .index-back img{
+            width: 100%;
+        }
         .person{
-            width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+        }
+        .person-left{
+            width: 22%;
+            display: inline-block;
+        }
+        .person-portrait{
+            width: 35%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+        }
+        .person-portrait img{
+            display: block;
+            width: 100%;
+        }
+        .person-left-select{
+            width: 35%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .person-left-tab{
+            font-size: 20px;
+            height: 50px;
+            margin: 10px 0;
+            cursor: pointer;
+            line-height: 50px;
+        }
+        .person-right{
+            vertical-align: top;
+            width: 70%;
+            display: inline-block;
+            margin-left: 3%;
+        }
+        .person-right-tab{
+            display: block;
+        }
+        .person-right-title{
+            font-size: 25px;
+            margin: 50px 0 60px -5%;
+        }
+        .person-right-content{
+            margin-left: -5%;
+        }
+        .person-team-title{
+            height: 25px;
+            line-height: 25px;
+            font-size: 18px;
+        }
+        .person-team-num-first{
+            padding: 0 0 0 10px;
+            width: 99%;
+            height: 40px;
+            line-height: 40px;
+            background: #47B9DE;
+            margin: 5px 0;
+            font-size: 20px;
+            opacity: .8;
+            color: #fff;
+        }
+        .person-build-num{
+            padding: 0 0 0 10px;
+            width: 99%;
+            height: 40px;
+            opacity: .8;
+            line-height: 40px;
+            background: #e5e5e5;
+            margin: 5px 0;
+            font-size: 20px;
+            color: #fff;
+        }
+        .person-team-category{
+            width: 21%;
+            height: 30px;
+            display: inline-block;
+            text-align: center;
+        }
+        .person-team-category:nth-child(1){
+            text-align: left;
+            width: 18%;
+        }
+        .person-team-category:nth-child(5){
+            width: 16%;
+        }
+        .person-change-password{
+            width: 99%;
+            display: inline-block;
+            vertical-align: top;
+            height: 380px;
+            /*margin-left: -6%;*/
+            background: rgba(255,255,255,.75);
+        }
+        .person-password{
+            width: 62%;
+            height: 380px;
+            margin: 40px auto;
+            font-size: 20px;
+            text-align: center;
+        }
+        .person-password-input{
+            outline: none;
+            width: 50%;
+            height: 40px;
+            margin: 10px 0;
+            font-size: 20px;
+            border: 1px solid #b5b5b5;
+        }
+        .person-password-submit{
+            width: 100px;
+            height: 40px;
+            border: 1px solid #b5b5b5;
+            line-height: 40px;
+            text-align: center;
+            margin: 40px auto;
+            cursor: pointer;
+            color: #22a7e7;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+        }
+        .person-message{
+            width: 70%;
+            height: 40px;
+            padding: 0 0 0 10px;
+            line-height: 40px;
+            font-size: 20px;
+            background: #f2f2f2;
+            margin: 10px 0;
+        }
+        .person-message:nth-child(odd){
+            background: #99d9f1;
+        }
+        .person-basic{
+            width: 50%;
+            text-align: right;
+            font-size: 20px;
+            color: #000;
+        }
+        .person-basic-input{
+            outline: none;
+            width: 60%;
+            height: 30px;
+            margin: 20px 0;
+            font-size: 20px;
+            border: 2px solid #f5f5f5;
+        }
+        .lh16{
+            width: 10%;
+            margin: 20px 25px;
+        }
+        .lh16:last-child{
+            margin: 20px 0 20px 25px;
+        }
+        .person-basic-textarea{
+            outline: none;
+            width: 80%;
+            font-family: "Microsoft YaHei UI",sans-serif;
+            margin: 20px 0;
+            font-size: 20px;
+            border: 2px solid #f5f5f5;
+        }
+        .person-basic-head{
+            text-align: center;
+        }
+        .person-head{
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+        }
+        .person-basic-out{
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
+        .person-basic-submit{
+            width: 100px;
+            height: 40px;
+            border: 1px solid #b5b5b5;
+            line-height: 40px;
+            text-align: center;
+            margin: 40px 45% 40px 55%;
+            cursor: pointer;
+            color: #22a7e7;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -94,32 +296,40 @@
     <div class="nav-tab">
         <ul>
             <li class="nav-li">
-                首页
+                <a href="">首页</a>
             </li>
             <li class="nav-li">
-                新闻动态
+                <a href="">新闻动态</a>
             </li>
             <li class="nav-li">
-                大赛介绍
+                <a href="">大赛介绍</a>
             </li>
             <li class="nav-li">
-                在线报名
+                <a href="">大赛介绍</a>
             </li>
             <li class="nav-li">
-                上传作品
+                <a href="">上传作品</a>
             </li>
             <li class="nav-li">
-                大赛交流
+                <a href="">上传作品</a>
             </li>
         </ul>
     </div>
 </div>
 <div class="index">
+    <div class="index-back">
+        <img src="image/back_02.jpg" alt="">
+    </div>
     <div class="person">
         <div class="person-left">
             <div class="person-portrait">
-                <img src="" alt="">
+                <img src="image/favorite.png" alt="">
             </div>
+            <script>
+                let person_portrait = document.getElementsByClassName("person-portrait");
+                let portrait_width = person_portrait[0].clientWidth;
+                person_portrait[0].style.height = portrait_width+'px';
+            </script>
             <div class="person-left-select">
                 <div class="person-left-tab">我的信息</div>
                 <div class="person-left-tab">个人信息</div>
@@ -129,13 +339,181 @@
             </div>
         </div>
         <div class="person-right">
-            <div class="person-right-tab"></div>
-            <div class="person-right-tab"></div>
-            <div class="person-right-tab"></div>
-            <div class="person-right-tab"></div>
-            <div class="person-right-tab"></div>
+
+            <div class="person-right-tab" >
+                <div class="person-right-title">我的信息</div>
+                <div class="person-right-content">
+                    <div class="person-message"></div>
+                    <div class="person-message"></div>
+                    <div class="person-message"></div>
+                    <div class="person-message"></div>
+                    <div class="person-message"></div>
+                </div>
+            </div>
+            <div class="person-right-tab" style="display: none;">
+                <div class="person-right-title">基础信息</div>
+                <div class="person-basic">
+                    <form action="">
+                        <div class="person-basic-head">
+                            修改头像: &nbsp&nbsp<div class="person-head">
+                            <img class="img" src="image/favorite.png" width="100" alt="">
+                            <input type="file" accept="image/*" id="file" class="person-basic-out">
+                        </div>
+                        </div>
+                        <label for="nick">修改昵称:&nbsp&nbsp</label>
+                        <input type="text" id="nick" class="person-basic-input"> <br>
+                        性别:&nbsp&nbsp
+                        <label  class="lh16"><input type="radio" hidefocus="true" value="0"   name="sex">男</label>
+                        <label  class="lh16"><input type="radio" hidefocus="true" value="1"  name="sex">女</label>
+                        <label  class="lh16"><input type="radio" hidefocus="true" value="2" checked="checked" name="sex">不告诉别人</label>
+                        <br>
+                        <label for="name">真实姓名: &nbsp&nbsp</label>
+                        <input type="text" id="name" class="person-basic-input"> <br>
+                        <label for="id">身份证号: &nbsp&nbsp</label>
+                        <input type="text" id="id" class="person-basic-input"> <br>
+                        <label for="mail">E-mail:&nbsp&nbsp</label>
+                        <input type="text" id="mail" class="person-basic-input"> <br>
+                        <label for="qq">QQ:&nbsp&nbsp</label>
+                        <input type="text" id="qq" class="person-basic-input"> <br>
+                        <label for="tel">E-mail:&nbsp&nbsp</label>
+                        <input type="text" id="tel" class="person-basic-input"> <br>
+                         <textarea name="" id="" cols="30" rows="5" class="person-basic-textarea" placeholder="介绍一下自己吧"></textarea>
+                        <div class="person-basic-submit">保存</div>
+                    </form>
+                </div>
+            </div>
+            <div class="person-right-tab" style="display: none;">
+                <div class="person-right-title">
+                    我的团队
+                </div>
+                <div class="person-right-content">
+                    <div class="person-team-title">我创建的团队</div>
+                    <div class="person-build-team">
+                        <div class="person-team-num-first">
+                            <div class="person-team-category">团队名称</div>
+                            <div class="person-team-category">队长</div>
+                            <div class="person-team-category">指导老师</div>
+                            <div class="person-team-category">创建时间</div>
+                            <div class="person-team-category">操作</div>
+                        </div>
+                        <div class="person-build-num">
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                        </div>
+                        <div class="person-build-num">
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                        </div>
+                    </div>
+                    <div class="person-add-team">
+                        <div class="person-team-title">我加入的团队</div>
+                        <div class="person-team-num-first">
+                            <div class="person-team-category">团队名称</div>
+                            <div class="person-team-category">队长</div>
+                            <div class="person-team-category">指导老师</div>
+                            <div class="person-team-category">创建时间</div>
+                            <div class="person-team-category">操作</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="person-right-tab" style="display: none;">
+                <div class="person-right-title">加入团队</div>
+                <div class="person-right-content">
+                    <div class="person-build-team">
+                        <div class="person-team-num-first">
+                            <div class="person-team-category">团队名称</div>
+                            <div class="person-team-category">队长</div>
+                            <div class="person-team-category">指导老师</div>
+                            <div class="person-team-category">创建时间</div>
+                            <div class="person-team-category">操作</div>
+                        </div>
+                        <div class="person-build-num">
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                        </div>
+                        <div class="person-build-num">
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                            <div class="person-team-category"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="person-right-tab" style="display: none;">
+                <div class="person-right-title">
+                    修改密码
+                </div>
+                <div class="person-right-content">
+                    <div class="person-change-password">
+                        <div class="person-password">
+                            <form action="">
+                                  新密码:  &nbsp&nbsp&nbsp <input type="password" class="person-password-input"> <br>
+                                再次输入: &nbsp <input type="password" class="person-password-input">
+                                <div class="person-password-submit">保存</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    //切换
+    let right_tab = document.getElementsByClassName("person-left-tab");
+    let left_tab = document.getElementsByClassName("person-right-tab");
+    for(let i = 0;i<5;i++)
+    {
+        (function (k) {
+            right_tab[k].addEventListener("click",function () {
+                for(let i = 0;i<5;i++)
+                    left_tab[i].style.display = "none";
+                left_tab[k].style.display = "block";
+            })
+        })(i);
+    }
+
+    let file_img = document.getElementById("file");
+    let img = document.getElementsByClassName("img");
+    file_img.onchange=function (ev) {
+        var current_file = this.files[0];
+        var size = this.files[0].size;
+        if(size>500*1024)
+        {
+            alert("上传文件大小请不要高于500k");
+            return;
+        }
+        var r = new FileReader();
+        r.readAsDataURL(current_file);
+        r.onload = function (ev) {
+            img[0].src=this.result
+        };
+        upload_img(current_file);
+    };
+    function upload_img(file){
+        let form = new FormData();
+        form.append("file",file);
+        let xhr = new XMLHttpRequest();
+        xhr.open("post","data.php",true);
+        // xhr.onload = function () {
+        //     let data = xhr.responseText;
+        //     let errorMsg = JSON.parse(data);
+        //     alert(errorMsg)
+        // };
+        xhr.send(form);
+    }
+</script>
 </body>
 </html>

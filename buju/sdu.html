@@ -287,6 +287,7 @@
         width: 450px;
         height: 190px;
         float: left;
+        margin-left: 50px;
         -webkit-transform: skewX(30deg);
         -moz-transform: skewX(30deg);
         -ms-transform: skewX(30deg);
@@ -296,7 +297,6 @@
     .rec-left-news{
         height: 35px;
         font-size: 18px;
-
     }
     .rec-left-news a{
         color: #9F9F9F;
@@ -421,6 +421,7 @@
     .photoWall-right{
         width: 500px;
         position: relative;
+        top: -10px;
         display: inline-block;
         margin: 0 40px 0 60px;
         font-family: "Microsoft YaHei UI";
@@ -1332,25 +1333,36 @@
     var photowall_num = 0;
 
     function auto_change(n){
-        if (photowall_num === 0) {
-            photowall_desc[3].style.display = "none";
-            photowall_desc[0].style.display = "block";
-            photowall_pic[3].style.display = "none";
-            photowall_pic[0].style.display = "block";
-            photowall_circle[3].style.background = "transparent";
-            photowall_circle[0].style.background = "#fff";
-            fadeIn(photowall_pic[0]);
-            fadeIn(photowall_desc[0]);
-            photowall_num++;
-            return;
+        // if (photowall_num === 0) {
+        //     photowall_desc[3].style.display = "none";
+        //     photowall_desc[0].style.display = "block";
+        //     photowall_pic[3].style.display = "none";
+        //     photowall_pic[0].style.display = "block";
+        //     photowall_circle[3].style.background = "transparent";
+        //     photowall_circle[0].style.background = "#fff";
+        //     fadeIn(photowall_pic[0]);
+        //     fadeIn(photowall_desc[0]);
+        //     photowall_num++;
+        //     return;
+        // }
+        // photowall_pic[n-1].style.display = "none";
+        // photowall_pic[n].style.display = "block";
+        // photowall_desc[n - 1].style.display = "none";
+        // photowall_desc[n].style.display = "block";
+        // fadeIn(photowall_pic[n]);
+        // fadeIn(photowall_desc[n]);
+        // photowall_circle[n-1].style.background = "transparent";
+        // photowall_circle[n].style.background = "#fff";
+        for(let i = 0;i<4;i++)
+        {
+            photowall_desc[i].style.display = "none";
+            photowall_pic[i].style.display = "none";
+            photowall_circle[i].style.background = "transparent";
         }
-        photowall_pic[n-1].style.display = "none";
-        photowall_pic[n].style.display = "block";
-        photowall_desc[n - 1].style.display = "none";
         photowall_desc[n].style.display = "block";
-        fadeIn(photowall_pic[n]);
+        photowall_pic[n].style.display = "block";
         fadeIn(photowall_desc[n]);
-        photowall_circle[n-1].style.background = "transparent";
+        fadeIn(photowall_pic[n]);
         photowall_circle[n].style.background = "#fff";
         photowall_num++;
         if (photowall_num === 4)
