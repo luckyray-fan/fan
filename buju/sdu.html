@@ -73,14 +73,19 @@
         /*border-right: 1px solid #6EB6FA;*/
         display: inline-block;
     }
+    .username .mdui-icon{
+        width: 0;
+        cursor: pointer;
+        margin-left: -12px;
+    }
     /*.nav-li:last-child{*/
-        /*border-right: 2px solid #4586f3;*/
+    /*border-right: 2px solid #4586f3;*/
     /*}*/
     .nav-li a{
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        display: block;
+        display: inline-block;
         text-align: center;
         line-height: 30px;
         height: 30px;
@@ -91,7 +96,59 @@
     .nav-li a:hover{
         border-bottom: 2px solid #00c0FF;
     }
+    .nav-op{
+        display: none;
+    }
+    .nav-open{
+        position: absolute;
+        right: 20px;
+        /*display: none;*/
+        top: 60px;
+        text-align: center;
+        width: 75px;
+        height: 80px;
+        -webkit-box-shadow: 1px 1px 5px #d1d1d1;
+        -moz-box-shadow: 1px 1px 5px #d1d1d1 ;
+        box-shadow: 1px 1px 5px #d1d1d1 ;
+        font-size: 14px;
+        background: #fff;
+        z-index: 0;
+        padding: 5px 0 0 0;
+    }
+    .nav-open a{
+        color: #909090;
+        height: 20px;
+        line-height: 20px;
+        width: 70px;
+        /*text-align: left;*/
+        margin: 1px 3px;
+    }
+    .nav-open a:hover{
+        background: #38f;
+        color: #fff;
+        border: none;
+    }
+    .nav-triangle{
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-bottom: 8px solid #d1d1d1;
+        position: relative;
+        top: -8px;
+        left: 36px;
+    }
+    .nav-triangle2{
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-bottom: 8px solid #fff;
+        position: absolute;
+        top: -4px;
+        left: -5px;
+        z-index: 999;
+    }
     .pic{
+        z-index: -1;
         overflow:hidden;
         margin-bottom: -30px;
     }
@@ -498,6 +555,15 @@
         width: 180px;
         text-align: center;
     }
+    .rew-content{
+        width: 120px;
+        margin: 0 auto;
+        font-size: 18px;
+        text-align: center;
+        padding: 20px 0 0 0;
+        color: #fff;
+        line-height: 26px;
+    }
     .reward-right{
         width: 100px;
         margin-left: -15px;
@@ -800,12 +866,6 @@
         text-align: right;
     }
 </style>
-<script src="echarts.min.simple.js"></script>
-<link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
-<head>
-    <meta charset="UTF-8">
-    <title>山东省软件设计大赛</title>
-</head>
 <body>
 <div class="nav">
     <div class="nav-home">
@@ -834,6 +894,17 @@
         </li>
         <li class="nav-li">
             <a href="">获奖查询</a>
+        </li>
+        <li class="nav-li username" onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="">luckyray</a>
+            <i class="mdui-icon material-icons">arrow_drop_down</i>
+            <div class="nav-op">
+            <div class="nav-triangle"><div class="nav-triangle2"></div></div>
+            <div  class="nav-open">
+                <a href="">个人中心</a>
+                <a href="">退出</a>
+            </div>
+            </div>
         </li>
     </ul>
 </div>
@@ -1022,7 +1093,49 @@
                 <div class="rew-desc-right"></div>
                 <div class="rew-desc">
                     <div class="rew-title">
-                        <span>特等奖</span>
+                        <span>完成奖</span>
+                    </div>
+                    <div class="rew-content">
+                        获奖证书
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>一、二、三等奖</span>
+                    </div>
+                    <div class="rew-content">
+                        奖金<br>
+                        获奖证书<br>
+                        企业入职offer <br>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="imagine/reward_01.jpg" alt="">
+            </div>
+            <div class="reward-desc">
+                <div class="rew-desc-left"></div>
+                <div class="rew-desc-right"></div>
+                <div class="rew-desc">
+                    <div class="rew-title">
+                        <span>特等奖提名</span>
+                        <div class="rew-content">
+                            奖金两千元 <br>
+                            获奖证书 <br>
+                            企业入职offer <br>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1038,33 +1151,11 @@
                     <div class="rew-title">
                         <span>特等奖</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="reward">
-            <div class="reward-pic">
-                <img src="imagine/reward_01.jpg" alt="">
-            </div>
-            <div class="reward-desc">
-                <div class="rew-desc-left"></div>
-                <div class="rew-desc-right"></div>
-                <div class="rew-desc">
-                    <div class="rew-title">
-                        <span>特等奖</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="reward">
-            <div class="reward-pic">
-                <img src="imagine/reward_01.jpg" alt="">
-            </div>
-            <div class="reward-desc">
-                <div class="rew-desc-left"></div>
-                <div class="rew-desc-right"></div>
-                <div class="rew-desc">
-                    <div class="rew-title">
-                        <span>特等奖</span>
+                    <div class="rew-content">
+                        奖金一万元 <br>
+                        获奖证书 <br>
+                        企业入职offer <br>
+                        考研推荐<br>
                     </div>
                 </div>
             </div>
@@ -1353,7 +1444,7 @@
         // fadeIn(photowall_desc[n]);
         // photowall_circle[n-1].style.background = "transparent";
         // photowall_circle[n].style.background = "#fff";
-        for(let i = 0;i<4;i++)
+        for(var i = 0;i<4;i++)
         {
             photowall_desc[i].style.display = "none";
             photowall_pic[i].style.display = "none";
@@ -1390,11 +1481,11 @@
     photowall_event[0].addEventListener("mouseout",function () {
         photo_set = setInterval("auto_change(photowall_num)",3000);
     });
-    for(let i = 0;i<4;i++)
+    for(var i = 0;i<4;i++)
     {
         (function (k) {
             photowall_circle[k].addEventListener("click",function () {
-                for(let i = 0;i<4;i++)
+                for(var i = 0;i<4;i++)
                 {
                     photowall_circle[i].style.background = "transparent";
                     photowall_pic[i].style.display = "none";
@@ -1406,6 +1497,17 @@
             })
         })(i)
     }
+
+    //导航
+    hide = function (li) {
+        var a = li.getElementsByClassName("nav-op")[0];
+        a.style.display = "none";
+    };
+    show = function (li) {
+        var a = li.getElementsByClassName("nav-op")[0];
+        a.style.display = "block";
+    }
+
     //弃用的电池动画
     // var battery = document.getElementsByClassName("people-battery-num");
     // var data = document.getElementsByClassName("people-data1");
