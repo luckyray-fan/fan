@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body{
+        font-size: 16px;
+        font-family: "Microsoft YaHei","微软雅黑","Arial,Geneva,sans-serif";
+        color: #344659;
+        overflow-x: hidden;
+        min-width: 1200px;
+    }
+    a,button{
+        cursor:pointer;
+    }
+    a{
+        text-decoration: none;
+    }
+
+    body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, p, blockquote, th, td, a, img, span {
+        margin: 0;
+        padding: 0;
+    }
+    ol,ul,li{
+        list-style: none;
+    }
+    .nav{
+        height: 78px;
+        position: relative;
+    }
+
+    .nav-home{
+        position: absolute;
+        left: 30px;
+        top: 8px;
+        height: 70px;
+        /*width: 400px;*/
+    }
+    .home{
+        display: inline-block;
+        height: 67px;
+        width: 87px;
+        background: url("imagine/logo_01.jpg") no-repeat center/cover;
+    }
+    .nav-desc{
+        display: inline-block;
+        text-align: left;
+        position: relative;
+        bottom: 16px;
+        font-size: 0;
+        line-height: 0;
+    }
+    .nav-ch{
+        display: inline-block;
+        height: 25px;
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .nav-en{
+        display: inline-block;
+        height: 16px;
+        line-height: 16px;
+        font-size: 14px;
+        color: #9F9F9F;
+    }
+    .nav ul{
+        position: absolute;
+        top: 0;
+        right: 5px;
+    }
+    .nav-li{
+        color: #909090;
+        margin: 5px 0;
+        padding: 20px 25px;
+        /*border-right: 1px solid #6EB6FA;*/
+        display: inline-block;
+    }
+    /*.nav-li:last-child{*/
+    /*border-right: 2px solid #4586f3;*/
+    /*}*/
+    .nav-li a{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        color: #909090;
+        width: 70px;
+        position: relative;
+    }
+    .nav-li a:hover{
+        border-bottom: 2px solid #00c0FF;
+    }
+    .index-fl{
+        float: left;
+    }
+    .index-fr{
+        float: right;
+    }
+    .index-news{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .index-news-first{
+        height: 230px;
+        margin-top: 50px;
+        border-bottom: #e6e6e6 solid 1px;
+    }
+    .index-news-title{
+        height: 85px;
+    }
+    .index-news-title a{
+        color: #4586f3;
+        height: 30px;
+        line-height: 30px;
+        font-size: 24px;
+    }
+    .index-news-title p{
+        color: #a0a0a0;
+        font-size: 12px;
+        position: relative;
+        margin-top: 45px;
+    }
+    .index-news-title p::after{
+        content: '';
+        width: 4px;
+        height: 6px;
+        background: #4586f3;
+        position: absolute;
+        left: -8px;
+        top: 1px;
+    }
+    .index-news-content{
+        height: 100px;
+        font-size: 16px;
+        color: #666;
+        line-height: 24px;
+    }
+    .index-news-footer p{
+        font-size: 13px;
+        color: #a0a0a0;
+        display: inline-block;
+    }
+    .index-news-footer a{
+        font-size: 12px;
+        color: #4ea2e2;
+        line-height: 13px;
+    }
+    .index-news-after{
+        padding: 40px 0 0 0;
+        height: 235px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .footer{
+        width: 100%;
+        height: 200px;
+        position: relative;
+        padding: 1px 0;
+        background: linear-gradient(135deg,#1f1c1c 60%,#000 40%);
+        color: #fff;
+    }
+    .footer-slant{
+        width: 20px;
+        position: absolute;
+        background: #000;
+        top: 40px;
+        left: 58%;
+        height: 120px;
+        -webkit-transform: skewX(135deg);
+        -moz-transform: skewX(135deg);
+        -ms-transform: skewX(135deg);
+        -o-transform: skewX(135deg);
+        transform: skewX(135deg);
+    }
+    .footer-pic{
+        height: 180px;
+        width: 200px;
+        display: inline-block;
+        border-right: 1px solid #fff;
+        margin: 10px 0;
+    }
+    .footer-pic img{
+        height: 100px;
+        margin: 40px 12px;
+        float: left;
+    }
+    .footer-pic-desc{
+        width: 16px;
+        margin: 0 10px;
+        line-height: 12px;
+        position: relative;
+        top: 20px;
+        font-size: 12px;
+        color: #fff;
+        display: inline-block;
+    }
+    .footer-left{
+        display: inline-block;
+        position: relative;
+        top: -25px;
+    }
+    .footer-left-about{
+        height: 25px;
+        position: relative;
+    }
+    .footer-ch{
+        font-size: 20px;
+        line-height: 25px;
+        margin: 0 15px;
+        display: inline-block;
+    }
+    .footer-en{
+        display: inline-block;
+        font-size: 16px;
+        border-bottom: 1px solid #fff;
+        width: 300px;
+    }
+    .footer-left-next{
+        font-size: 14px;
+        line-height: 20px;
+        margin: 20px 0 0 15px;
+    }
+    .footer-right{
+        display: inline-block;
+        position: absolute;
+        right:40px;
+        height: 160px;
+        margin: 20px 0;
+    }
+    .footer-qr{
+        position: relative;
+    }
+    .footer-qr img{
+        width: 100px;
+        position: relative;
+        margin-left: 200px;
+    }
+    .footer-right-next{
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        text-align: right;
+    }
+</style>
+<script src="echarts.min.simple.js"></script>
+<link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+<head>
+    <meta charset="UTF-8">
+    <title>山东省软件设计大赛</title>
+</head>
+<body>
+<div class="nav">
+    <div class="nav-home">
+        <a href="#" class="home"></a>
+        <div class="nav-desc">
+            <div class="nav-ch">山东省大学生软件设计大赛</div>
+            <br>
+            <div class="nav-en">SHANDONG UNDERGRADUATE SOFTWARE DESIGN CONTEST</div>
+        </div>
+    </div>
+    <ul>
+        <li class="nav-li">
+            <a href="">首页</a>
+        </li>
+        <li class="nav-li">
+            <a href="">大赛简介</a>
+        </li>
+        <li class="nav-li">
+            <a href="">新闻动态</a>
+        </li>
+        <li class="nav-li">
+            <a href="">提交作品</a>
+        </li>
+        <li class="nav-li">
+            <a href="">在线报名</a>
+        </li>
+        <li class="nav-li">
+            <a href="">获奖查询</a>
+        </li>
+    </ul>
+</div>
+<div class="index">
+    <div class="index-news">
+        <div class="index-news-first">
+            <div class="index-news-title">
+                <a href="" class="index-fl">关于这两天天气比较热的通知</a>
+                <p class="index-fr index-news-p">山东省软赛组委会</p>
+            </div>
+            <div class="index-news-content">
+                天气过热，请各位同学不要出门，就算天气不热了也尽量少出门，毕竟自己家才是最棒的。
+                我再复制点东西过来好了总觉得高潮部分有夏天的味道，想到上个夏天我还在奋力的背着政治地理，晚自习之前那段时间整栋楼都很安静，外面的风把试卷吹得沙沙作响，一晃已经快毕业一年了，高三的时候总是想快点毕业，现在才发现高中真的好珍贵，高中为了一个我喜欢的男生转学去他们学校，这大概是我到现在为止做过的最勇敢的事情
+            </div>
+            <div class="index-news-footer">
+                <p class="index-fl">2018-7-16</p>
+                <a href="" class="index-fr">阅读全文</a>
+            </div>
+        </div>
+        <div class="index-news-list">
+            <div class="index-news-news">
+                <div class="index-news-after">
+                    <div class="index-news-title">
+                        <a href="" class="index-fl">今年绘画技术即将上升一个大台阶</a>
+                        <p class="index-fr">山东省软赛组委会</p>
+                    </div>
+                    <div class="index-news-content">
+                        当一个人完完全全符合你的想象，这就很危险了。我喜欢一个人的时候，如果我们中间隔了一百步，我会先走九十九步。等等，一百步也行啊，一百零一步也没问题。直接蹦哒到你手心，好不好？“可惜喜欢就像乘法一样，只要一方为零，结果便为零。”我记得我跟别人炫耀过你。💔
+                    </div>
+                    <div class="index-news-footer">
+                        <p class="index-fl">2018-7-16</p>
+                        <a href="" class="index-fr">阅读全文</a>
+                    </div>
+                </div>
+                <div class="index-news-after">
+                    <div class="index-news-title">
+                        <a href="" class="index-fl">今年绘画技术即将上升一个大台阶</a>
+                        <p class="index-fr">山东省软赛组委会</p>
+                    </div>
+                    <div class="index-news-content"></div>
+                    <div class="index-news-footer">
+                        <p class="index-fl">2018-7-16</p>
+                        <a href="" class="index-fr">阅读全文</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-slant"></div>
+        <div class="footer-pic">
+            <img src="imagine/footer_03.jpg" alt="">
+            <div class="footer-pic-desc">山东省大学生软件设计大赛</div>
+        </div>
+        <div class="footer-left">
+            <div class="footer-left-about">
+                <div class="footer-ch">联系我们</div>
+                <div class="footer-en">Contact  us</div>
+            </div>
+            <div class="footer-left-next">
+                电话：0531-86391234 <br>
+                Email：sdsdxskjj@163.com <br>
+                技术支持：17865166210 <br>
+                地址：山东省济南市历城区舜华路1500号
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="footer-qr">
+                <img src="imagine/qrcode_01.jpg" alt="">
+            </div>
+            <div class="footer-right-next">
+                Copyright © 2018 山东省大学生软件设计大赛 <br>
+                鲁ICP备13008542号-3
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

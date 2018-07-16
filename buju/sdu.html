@@ -9,7 +9,7 @@
 <style>
     body{
         font-size: 16px;
-        font-family: "Microsoft YaHei","微软雅黑","Arial,Geneva,sans-serif";
+        font-family: "SimHei ","Raleway", "Helvetica Neue","Microsoft YaHei", Helvetica, Arial, sans-serif;
         color: #344659;
         overflow-x: hidden;
         min-width: 1200px;
@@ -75,7 +75,7 @@
     .nav-li{
         color: #909090;
         margin: 5px 0;
-        padding: 20px 25px;
+        padding: 20px 15px;
         /*border-right: 1px solid #6EB6FA;*/
         display: inline-block;
     }
@@ -87,7 +87,7 @@
     /*.nav-li:last-child{*/
     /*border-right: 2px solid #4586f3;*/
     /*}*/
-    .nav-li a{
+    .nav-li >a{
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
@@ -97,6 +97,7 @@
         height: 30px;
         color: #909090;
         width: 70px;
+        font-size: 17px;
         vertical-align: middle;
         position: relative;
         /*overflow: hidden;*/
@@ -115,10 +116,10 @@
     }
     .nav-open{
         position: absolute;
-        right: 20px;
+        right: 10px;
         /*display: none;*/
         top: 60px;
-        text-align: center;
+        text-align: left;
         width: 88px;
         height: 80px;
         -webkit-box-shadow: 1px 1px 5px #d1d1d1;
@@ -1531,6 +1532,7 @@
 
     //title用户名
     var usr = document.getElementById("usr");
+    console.log(usr);
     usr.setAttribute("title",usr.innerText);
     //弃用的电池动画
     // var battery = document.getElementsByClassName("people-battery-num");
