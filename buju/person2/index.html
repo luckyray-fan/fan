@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页面</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mdui/0.4.1/js/mdui.min.js"></script>
+    <style>
+        body{
+            font-size: 16px;
+            font-family: "SimHei ","Raleway", "Helvetica Neue","Microsoft YaHei", Helvetica, Arial, sans-serif;
+            color: #344659;
+            overflow-x: hidden;
+            min-width: 1200px;
+        }
+        a,button{
+            cursor:pointer;
+        }
+        a{
+            text-decoration: none;
+        }
+        input{
+            outline: none;
+            border: none;
+        }
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, p, blockquote, th, td, a, img, span {
+            margin: 0;
+            padding: 0;
+        }
+        ol,ul,li{
+            list-style: none;
+        }
+        button{
+            border: none;
+        }
+        .nav{
+            height: 78px;
+            position: relative;
+        }
+
+        .nav-home{
+            position: absolute;
+            left: 30px;
+            top: 8px;
+            height: 70px;
+            /*width: 400px;*/
+        }
+        .home{
+            display: inline-block;
+            height: 67px;
+            width: 87px;
+            background: url("image/logo_01.jpg") no-repeat center/cover;
+        }
+        .nav-desc{
+            display: inline-block;
+            text-align: left;
+            position: relative;
+            bottom: 16px;
+            font-size: 0;
+            line-height: 0;
+        }
+        .nav-ch{
+            display: inline-block;
+            height: 25px;
+            line-height: 25px;
+            font-size: 20px;
+        }
+        .nav-en{
+            display: inline-block;
+            height: 16px;
+            line-height: 16px;
+            font-size: 14px;
+            color: #9F9F9F;
+        }
+        .nav ul{
+            position: absolute;
+            top: 0;
+            right: 5px;
+        }
+        .nav-li{
+            color: #909090;
+            margin: 5px 0;
+            padding: 20px 15px;
+            /*border-right: 1px solid #6EB6FA;*/
+            display: inline-block;
+        }
+        .username .mdui-icon{
+            width: 0;
+            cursor: pointer;
+            margin-left: -12px;
+        }
+        /*.nav-li:last-child{*/
+        /*border-right: 2px solid #4586f3;*/
+        /*}*/
+        .nav-li >a{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            color: #909090;
+            width: 70px;
+            font-size: 17px;
+            vertical-align: middle;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        #usr{
+            overflow: hidden;
+            -ms-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .nav-li a:hover{
+            border-bottom: 2px solid #00c0FF;
+        }
+        .nav-op{
+            display: none;
+        }
+        .nav-open{
+            position: absolute;
+            right: 10px;
+            /*display: none;*/
+            top: 60px;
+            text-align: left;
+            width: 88px;
+            height: 80px;
+            -webkit-box-shadow: 1px 1px 5px #d1d1d1;
+            -moz-box-shadow: 1px 1px 5px #d1d1d1 ;
+            box-shadow: 1px 1px 5px #d1d1d1 ;
+            font-size: 14px;
+            background: #fff;
+            z-index: 0;
+            padding: 5px 0 0 0;
+        }
+        .nav-open .mdui-icon{
+            font-size: 14px;
+        }
+        .nav-open a{
+            color: #909090;
+            height: 20px;
+            line-height: 20px;
+            width: 82px;
+            text-align: left;
+            margin: 1px 3px;
+        }
+        .nav-open a:hover{
+            background: #38f;
+            color: #fff;
+            border: none;
+        }
+        .nav-triangle{
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-bottom: 8px solid #d1d1d1;
+            position: relative;
+            top: -8px;
+            left: 31px;
+        }
+        .nav-triangle2{
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-bottom: 8px solid #fff;
+            position: absolute;
+            top: -4px;
+            left: -5px;
+            z-index: 999;
+        }
+        html,body{
+            height: 100%;
+        }
+        .index{
+            /*position: absolute;*/
+            /*top: 78px;*/
+            /*bottom: 0;*/
+            /*width: 100%;*/
+            width: 100%;
+            height: 100%;
+            padding: 1px 0 0 0;
+            background: #D7DFDC;
+        }
+        .index-include{
+            width: 80%;
+            height: 600px;
+            margin: 0 auto;
+            font-size: 0;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 0 2px rgba(0,0,0,.2);
+            -moz-box-shadow: 0px 0 2px rgba(0,0,0,.2);
+            box-shadow: 0px 0 2px rgba(0,0,0,.2);
+        }
+        .index-left{
+            width: 15%;
+            -webkit-box-shadow: 2px 0 1px rgba(0,0,0,.2);
+            -moz-box-shadow: 2px 0 1px rgba(0,0,0,.2);
+            box-shadow: 2px 0 1px rgba(0,0,0,.2);
+            height: 100%;
+            background: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        .left-head{
+            width: 100px;
+            /* height: 100px; */
+            padding: 1px;
+            margin: 0 auto;
+            position: relative;
+            font-family: "Microsoft YaHei";
+        }
+        .left-head-img{
+            width: 60px;
+            height: 60px;
+            margin: 20px auto;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .left-head-img img{
+            width: 100%;
+        }
+        .left-head-name{
+            margin: 20px 0 0 0;
+            text-align: center;
+            color: #263440;
+            font-size: 20px;
+        }
+        .left-tab{
+            color: #B6B6B8;
+            margin: 20px auto 0 auto;
+            font-size: 14px;
+            /* padding: 0 0 0 10%; #F5F4F7*/
+            cursor: pointer;
+        }
+        .left-tab-content{
+            height: 40px;
+            padding: 0 0 0 20%;
+            line-height: 40px;
+            -webkit-transition: color .3s linear ;
+            -moz-transition: color .3s linear ;
+            -ms-transition: color .3s linear ;
+            -o-transition: color .3s linear ;
+            transition: color .3s linear ;
+        }
+        .left-tab-content:hover ,.left-tab .hover{
+            border-left: 2px solid #00c0FF;
+            color: #000;
+        }
+        .left-tab-icon .mdui-icon{
+            font-size: 15px;
+            vertical-align: -3px;
+        }
+        .left-tab-num{
+            width: 20px;
+            height: 10px;
+            display: inline-block;
+            margin: 0 0 0 50px;
+            /* position: absolute; */
+            /* float: right; */
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background: #96A5AB;
+            line-height: 10px;
+            text-align: center;
+            color: #fff;
+            font-size: 8px;
+        }
+        .mdui-panel-item-header{
+            position: relative;
+        }
+        .right-tab-num{
+            width: 32px;
+            height: 16px;
+            display: inline-block;
+            position: absolute;
+            right: 5%;
+            /* position: absolute; */
+            /* float: right; */
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+            background: #96A5AB;
+            line-height: 16px;
+            text-align: center;
+            color: #fff;
+            font-size: 8px;
+        }
+        .index-right{
+            width: 85%;
+            height: 100%;
+            min-height: 100%;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: bottom;
+            background: #F5F4F7;
+        }
+        .right-tab{
+            display: none;
+        }
+        .right-title{
+            height: 150px;
+            width: 80%;
+            line-height: 150px;
+            font-size: 24px;
+            margin: 0 auto 10px auto;
+            padding: 0 0 0 -1%;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .team-img img{
+            width: 100%;
+        }
+        .right-message{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .mdui-panel{
+            -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,.1);
+            -moz-box-shadow: 0 0 0 0 rgba(0,0,0,.1);
+            box-shadow: 0 0 0 0 rgba(0,0,0,.1);
+        }
+        .mdui-panel-item{
+            margin: 10px 0;
+            border-bottom: 0;
+        }
+        .right-search{
+            width: 50%;
+            /* height: 50%; */
+            display: inline-block;
+            position: relative;
+        }
+        .team-search{
+            display: inline-block;
+            /* outline: none; */
+            height: 30px;
+            position: relative;
+            line-height: 0;
+            /* border: none; */
+            /* border-bottom: 1px solid #F7F4F7; */
+        }
+        .search-icon{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+            color: #d1d1d1;
+            cursor: pointer;
+            font-size: 20px;
+            text-align: center;
+            -webkit-transition: color .3s linear ;
+            -moz-transition: color .3s linear;
+            -ms-transition: color .3s linear ;
+            -o-transition: color .3s linear ;
+            transition: color .3s linear ;
+        }
+        .search-icon:hover{
+            color: #000;
+        }
+        .search{
+            outline: none;
+            height: 30px;
+            border: none;
+            border-bottom: 1px solid #d1d1d1;
+            margin: 0 0 0 30px;
+            font-size: 20px;
+            background: #F5F4F7;
+        }
+        .search:focus{
+            border: none;
+            border-bottom:1px solid #d1d1d1
+        }
+        .team-add{
+            width: 80%;
+            margin: 0 auto;
+            padding: 10px 30px 30px 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .team-card{
+            width: 230px;
+            height: 270px;
+            position: relative;
+            display: inline-block;
+            background: #fff;
+            padding: 1px 0 0 0;
+            margin: 0 0 20px 0;
+            cursor: pointer;
+            -webkit-transition: box-shadow .3s linear;
+            -moz-transition: box-shadow .3s linear;
+            -ms-transition: prop .3s linear;
+            -o-transition: prop .3s linear;
+            transition: box-shadow .3s linear;
+        }
+        .team-card img{
+            width: 100%;
+        }
+        .team-card:hover{
+            -webkit-box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+            -moz-box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+            box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+        }
+        .member-card{
+            width: 230px;
+            height: 170px;
+            position: relative;
+            display: inline-block;
+            background: #fff;
+            padding: 1px 0 0 0;
+            margin: 0 0 20px 0;
+            cursor: pointer;
+            -webkit-transition: box-shadow .3s linear;
+            -moz-transition: box-shadow .3s linear;
+            -ms-transition: prop .3s linear;
+            -o-transition: prop .3s linear;
+            transition: box-shadow .3s linear;
+        }
+        .member-card:hover{
+            -webkit-box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+            -moz-box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+            box-shadow: 0 0 8px 2px rgba(0,0,0,.1);
+        }
+        .member-quit{
+            width: 120px;
+            height: 50px;
+            background: #fff;
+            border: 1px solid #00c0FF;
+            -webkit-border-radius: 5px;
+            cursor: pointer;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color: #00c0FF;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .right-member{
+            /* width: 80%; */
+            margin: 0 auto;
+        }
+        .member-delete{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+        }
+        .member-delete img{
+            width: 100%;
+        }
+        .team-img{
+            width: 60px;
+            height: 60px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 30px auto 0 auto;
+        }
+        .team-name{
+            margin: 15px auto;
+            font-size: 16px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+        .team-mail{
+            margin: -15px auto 0;
+            width: 100%;
+            text-align: center;
+            height: 15px;
+            font-size: 12px;
+            line-height: 15px;
+            color: #98C6F7;
+        }
+        .team-date{
+            font-size: 10px;
+            height: 15px;
+            margin: 3px auto 3px auto;
+            line-height: 15px;
+            text-align: center;
+            color: #C8CECF;
+        }
+        .team-line{
+            width: 20px;
+            border-bottom: 1px solid #F7F4F7;
+            margin: 10px auto;
+        }
+        .team-member{
+            height: 30px;
+            text-align: center;
+        }
+        .team-member-header{
+            margin: 0 2px;
+            width: 30px;
+            height: 30px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+        }
+        .team-add-button{
+            height: 40px;
+            line-height: 40px;
+            border-top: 1px solid #F7F4F7;
+            font-size: 15px;
+            color: #B6B6B8;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            cursor: pointer;
+            -webkit-transition: color .3s linear;
+            -moz-transition: color .3s linear;
+            -ms-transition: color .3s linear;
+            -o-transition: color .3s linear;
+            transition: color .3s linear;
+        }
+        .team-add-button:hover{
+            color: #000;
+        }
+        .team-manage-button{
+            height: 40px;
+            line-height: 40px;
+            border-top: 1px solid #F7F4F7;
+            font-size: 15px;
+            color: #B6B6B8;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            cursor: pointer;
+            -webkit-transition: color .3s linear;
+            -moz-transition: color .3s linear;
+            -ms-transition: color .3s linear;
+            -o-transition: color .3s linear;
+            transition: color .3s linear;
+        }
+        .team-manage-button:hover{
+            color: #000;
+        }
+        .team-member-manage{
+            display: none;
+        }
+        form input{
+            height: 30px;
+            line-height: 30px;
+            color: #344659;
+            border:1px solid #c8d2d7;
+            text-indent: 12px;
+            width: 365px;
+        }
+        form input:focus{
+            border: 1px solid #19BB9B;
+        }
+        .team-build{
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+        }
+        .team-build-title{
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .team-build-form{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .team-build-name{
+            margin: 30px 0;
+        }
+        .team-build-teacher{
+            margin: 20px 0;
+        }
+        .team-build-button{
+            margin: 50px 0 0 0;
+        }
+        .team-button{
+            width: 120px;
+            height: 38px;
+            background: #4586f3;
+            color: #fff;
+            font-size: 18px;
+            border-bottom: 1px solid #397bc4;
+            line-height: 38px;
+            text-align: center;
+            margin: 0 0 0 190px;
+        }
+        .team-button:hover{
+            background: #5298e5;
+        }
+        .right-myteam{
+            width: 80%;
+            /* height: 100%; */
+            margin: 0 auto;
+        }
+        .right-person{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .right-person-form{
+            width: 80%;
+            margin-bottom: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .form-label{
+            width: 50px;
+            display: inline-block;
+            color: #778a99;
+        }
+        #person-name{
+
+        }
+        .form-warning{
+            color: #f00;
+        }
+        .person-head{
+            width: 120px;
+            height: 120px;
+            margin-left: 100px;
+            overflow: hidden;
+            position: relative;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .person-head img{
+            width: 100%;
+        }
+        .click-upload{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 28px;
+            background: #000;
+            opacity: .4;
+            color: #fff;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+        }
+        #file{
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="nav">
+    <div class="nav-home">
+        <a href="#" class="home"></a>
+        <div class="nav-desc">
+            <div class="nav-ch">山东省大学生软件设计大赛</div>
+            <br>
+            <div class="nav-en">SHANDONG UNDERGRADUATE SOFTWARE DESIGN CONTEST</div>
+        </div>
+    </div>
+    <ul>
+        <li class="nav-li">
+            <a href="">首页</a>
+        </li>
+        <li class="nav-li">
+            <a href="">大赛简介</a>
+        </li>
+        <li class="nav-li">
+            <a href="">新闻动态</a>
+        </li>
+        <li class="nav-li">
+            <a href="">提交作品</a>
+        </li>
+        <li class="nav-li">
+            <a href="">在线报名</a>
+        </li>
+        <li class="nav-li">
+            <a href="">获奖查询</a>
+        </li>
+        <li class="nav-li username" onmouseover="show(this)" onmouseout="hide(this)">
+            <a href="" title="" id="usr">luckyray</a>
+            <i class="mdui-icon material-icons">arrow_drop_down</i>
+            <div class="nav-op">
+                <div class="nav-triangle"><div class="nav-triangle2"></div></div>
+                <div  class="nav-open">
+                    <a href="">
+                        &nbsp &nbsp <i class="mdui-icon material-icons">&#xe851;</i> &nbsp &nbsp
+                        个人中心</a>
+                    <a href="">
+                        &nbsp &nbsp  <i class="mdui-icon material-icons">&#xe879;</i> &nbsp &nbsp
+                        退出</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="index">
+    <div class="index-include">
+        <div class="index-left">
+            <div class="left-head">
+                <div class="left-head-img">
+                    <img src="image/favorite.png" alt="">
+                </div>
+                <div class="left-head-name">luckyray</div>
+
+            </div>
+            <div class="left-tab">
+                <div class="left-tab-content mdui-ripple">
+                    <div class="left-tab-icon">
+                        <i class="mdui-icon material-icons">mail_outline</i> 信息
+                        <div class="left-tab-num">5</div>
+                    </div>
+                </div>
+                <div class="left-tab-content mdui-ripple">
+                    <div class="left-tab-icon">
+                        <i class="mdui-icon material-icons">mail_outline</i> 团队加入
+                    </div>
+                </div>
+                <div class="left-tab-content mdui-ripple">
+                    <div class="left-tab-icon">
+                        <i class="mdui-icon material-icons">mail_outline</i> 我的团队
+                    </div>
+                </div>
+                <div class="left-tab-content mdui-ripple">
+                    <div class="left-tab-icon">
+                        <i class="mdui-icon material-icons">mail_outline</i> 个人中心
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="index-right">
+            <div class="right-tab">
+                <div class="right-title">信息</div>
+                <div class="right-message">
+                    <div class="mdui-panel mdui-panel-gapless" mdui-panel>
+                        <div class="mdui-panel-item">
+                            <div class="mdui-panel-item-header">luckyray
+                                <div class="right-tab-num">未读</div>
+                            </div>
+                            <div class="mdui-panel-item-body">
+                                <p>今天天气不错</p>
+                                <p>aaaa</p>
+                            </div>
+                        </div>
+                        <div class="mdui-panel-item">
+                            <div class="mdui-panel-item-header">Cinlan
+                                <div class="right-tab-num">未读</div>
+                            </div>
+                            <div class="mdui-panel-item-body">
+                                <p>game over,the next game</p>
+                            </div>
+                        </div>
+                        <div class="mdui-panel-item">
+                            <div class="mdui-panel-item-header">
+                                maho
+                                <div class="right-tab-num">未读</div>
+                            </div>
+                            <div class="mdui-panel-item-body">
+                                <p>tesula no maho dei siki death</p>
+                            </div>
+                        </div>
+                        <div class="mdui-panel-item">
+                            <div class="mdui-panel-item-header">
+                                shilaxi
+                                <div class="right-tab-num">未读</div>
+                            </div>
+                            <div class="mdui-panel-item-body">
+                                <p>qio no tianki dei ina</p>
+                            </div>
+                        </div>
+                        <div class="mdui-panel-item">
+                            <div class="mdui-panel-item-header">
+                                tetete
+                                <div class="right-tab-num">未读</div>
+                            </div>
+                            <div class="mdui-panel-item-body">
+                                <p>let's go</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-tab"  >
+                <div class="right-title">
+                    搜索团队
+                    <form action="" class="right-search">
+                        <div class="team-search">
+                            <input type="text" class="search">
+                            <div class="search-icon"><i class="mdui-icon material-icons">search</i></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="team-add">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="image/head_01.png" alt="">
+                        </div>
+                        <div class="team-name">Anmi</div>
+                        <div class="team-mail">lucky.Anmi@gmail.com</div>
+                        <div class="team-date">2017-7-23</div>
+                        <div class="team-line"></div>
+                        <div class="team-member">
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                        </div>
+                        <div class="team-add-button mdui-ripple">申请加入</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-tab" >
+                <div class="right-title">我的团队</div>
+                <div class="right-myteam">
+                    <div class="team-card">
+                        <div class="team-img">
+                            <img src="image/head_01.png" alt="">
+                        </div>
+                        <div class="team-name">Anmi</div>
+                        <div class="team-mail">lucky.Anmi@gmail.com</div>
+                        <div class="team-date">2017-7-23</div>
+                        <div class="team-line"></div>
+                        <div class="team-member">
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                            <div class="team-member-header">
+                                <img src="image/favorite.png" alt="">
+                            </div>
+                        </div>
+                        <div class="team-manage-button mdui-ripple">管理</div>
+
+                        <!--<div class="team-build-no"> 这里是没有创建团队时的样子-->
+                            <!--<div class="right-title">创建团队</div>-->
+                            <!--<div class="team-build">-->
+                                <!--<div class="team-build-title">团队基本信息</div>-->
+                                <!--<form action="">-->
+                                    <!--<div class="team-build-form">-->
+                                        <!--<div class="team-build-name">-->
+                                            <!--团队名称 &nbsp &nbsp &nbsp &nbsp-->
+                                            <!--<input type="text" placeholder="团队名称">-->
+                                        <!--</div>-->
+                                        <!--<div class="team-build-teacher">-->
+                                            <!--指导老师 &nbsp &nbsp &nbsp &nbsp-->
+                                            <!--<input type="text" placeholder="指导老师">-->
+                                            <!--<div class="team-build-button">-->
+                                                <!--<button type="button" class="team-button">提交</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+
+                                    <!--</div>-->
+                                <!--</form>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="team-member-manage">
+                        <div class="right-member">
+                            <div class="member-card">
+                                <div class="team-img">
+                                    <img src="image/head_01.png" alt="">
+                                </div>
+                                <div class="team-name">Anmi</div>
+                                <div class="team-mail">lucky.Anmi@gmail.com</div>
+                                <div class="member-delete">
+                                    <img src="image/icon-fail.png" alt="">
+                                </div>
+                            </div>
+                            <div class="member-quit">确认</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-tab">
+
+                <div class="right-title">个人中心</div>
+                <div class="right-person">
+                    <!--<div class="person-head">-->
+                        <!--<img src="image/favorite.png" alt="">-->
+                        <!--<div class="click-upload">-->
+                            <!--点击上传-->
+                            <!--<input type="file" id="file" accept="image/*">-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="person-instruction">以下信息填写务必真实</div>
+                    <div class="person-form">
+                        <form action="">
+                            <div class="right-person-form">
+                                <span class="form-label">姓名</span>
+                                <input type="text" placeholder="姓名" id="person-name">
+                                <span class="form-warning"></span>
+                            </div>
+                            <div class="right-person-form">
+                                <span class="form-label">姓名</span>
+                                <input type="text" placeholder="姓名" class="">
+                            </div>
+                            <div class="right-person-form">
+                                <span class="form-label">姓名</span>
+                                <input type="text" placeholder="姓名" class="">
+                            </div>
+                            <div class="right-person-form">
+                                <span class="form-label">姓名</span>
+                                <input type="text" placeholder="姓名" class="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="test.js"></script>
+<script>
+    //切换
+    let left_tab = document.getElementsByClassName("left-tab-content");
+    let right_tab = document.getElementsByClassName("right-tab");
+    right_tab[0].style.display = "block";
+    for(let i = 0;i<4;i++)
+    {
+        (function (k) {
+            left_tab[k].addEventListener("click",function () {
+                for(let i = 0;i<4;i++)
+                {
+                    right_tab[i].style.display = "none";
+                    left_tab[i].classList.remove("hover");
+                }
+                left_tab[i].classList.add("hover");
+                right_tab[k].style.display = "block";
+            })
+        })(i);
+    }
+
+    hide = function (li) {
+        var a = li.getElementsByClassName("nav-op")[0];
+        a.style.display = "none";
+    };
+    show = function (li) {
+        var a = li.getElementsByClassName("nav-op")[0];
+        a.style.display = "block";
+    };
+
+    //消息计数
+    var right_num = document.getElementsByClassName("right-tab-num");
+    var click_point = document.getElementsByClassName("mdui-panel-item-header");
+    var left_num = document.getElementsByClassName("left-tab-num");
+    var right_num_length = right_num.length;
+    for(let i = 0;i<right_num_length;i++)
+    {
+        (function (e) {
+            click_point[e].addEventListener("click",function () {
+                if(right_num[e].style.display !== "none")
+                    left_num[0].innerText--;
+                right_num[e].style.display = "none";
+            })
+        })(i)
+    }
+
+    //团队操作
+    var manage_button = document.getElementsByClassName("team-manage-button");
+    var team_manage = document.getElementsByClassName("team-member-manage");
+    var team_card = document.getElementsByClassName("team-card");
+    manage_button[0].addEventListener("click",function (evt) {
+        team_manage[0].style.display = "block";
+        team_card[1].style.display= "none";
+        console.log(team_card[0])
+    });
+
+    var member_delete = document.getElementsByClassName("member-delete");
+    var member_card = document.getElementsByClassName("member-card");
+    member_delete[0].addEventListener("click",function (evt) {
+        member_card[0].style.display = "none";
+    });
+
+    var member_quit = document.getElementsByClassName("member-quit");
+    member_quit[0].addEventListener("click",function () {
+        team_manage[0].style.display = "none";
+        team_card[1].style.display = "block";
+    })
+</script>
+</body>
+</html>
