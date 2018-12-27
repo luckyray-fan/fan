@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑个人信息</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background: #f5f5f5;
+            font-family: roboto;
+        }
+        .headd{
+            background: #fff;
+            display: inline-block;
+            width: 100%;
+            height: 128px;
+            box-shadow: 0 4px 12px rgba(0,0,0,.4);
+            color: #909090;
+            font-size: 55px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            line-height: 128px;
+        }
+        .clean{
+            display: inline-block;
+            position: relative;
+            left: 5%;
+            bottom: 10px;
+            width: 80px;
+            height: 80px;
+        }
+        .clean .claer{
+            font-size: 80px;
+            color: #909090;
+        }
+        .check{
+            position: relative;
+            left: 90%;
+            width: 80px;
+            height: 80px;
+            bottom: 110%;
+        }
+        .check .check1{
+            font-size: 80px;
+            color: #909090;
+        }
+        .head{
+            text-align: center;
+            font-size: 55px;
+            font-weight: bold;
+            width: 300px;
+            height: 300px;
+            /*background: #4586F3;*/
+            position: relative;
+            bottom: 30px;
+            left: calc(50% - 150px);
+        }
+        .header{
+            margin: 0 auto;
+            width: 290px;
+            height: 290px;
+            border:10px solid #fff;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .header img{
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+        .kongbai{
+            width: 1px;
+            height: 7%;
+        }
+        .edit{
+            font-size: 55px;
+        }
+        .mdui-textfield-focus .mdui-textfield-input,.mdui-textfield-focus .mdui-textfield-input:hover{
+            border-bottom-color: #4586F3 !important;
+            box-shadow:0 1px 0 0 #4586F3 !important;
+        }
+        .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label{
+            color: #4586F3;
+        }
+        .mdui-textfield-label{
+            position: relative;
+            left: 10%;
+            font-size: 55px;
+        }
+        .mdui-textfield-input{
+            position: relative;
+            left: 10%;
+            width: 80%;
+            height: 55px;
+        }
+        .mdui-radio{
+            height: 110px;
+            padding-left: 110px;
+            line-height: 110px;
+
+        }
+        .mdui-radio input[type=radio]:checked+.mdui-radio-icon{
+            border-color: #4586F3;
+        }
+        .mdui-radio-icon{
+            top: 28px;
+            width: 55px;
+            height: 55px;
+            -webkit-border-radius: 55px;
+            -moz-border-radius: 55px;
+            border-radius: 55px;
+            border: 6px solid rgba(0,0,0,.54);
+        }
+        .sheet{
+            margin: 20px 0;
+            font-size: 55px;
+        }
+        .mdui-radio-icon:before{
+            width: 45px;
+            height: 45px;
+            background-color: #4586F3;
+            -webkit-border-radius: 45px;
+            -moz-border-radius: 45px;
+            border-radius: 45px;
+        }
+        .rrr{
+            margin-top: 40px;
+            margin-bottom: -10px;
+            position: relative;
+            left: 10%;
+            width: 80%;
+        }
+        .ok{
+            position: relative;
+            top: 10%;
+            left: 63%;
+            width: 250px;
+            height: 120px;
+            border: 6px solid #4586F3;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            color: #4586F3;
+            line-height: 120px;
+            text-align: center;
+            font-size: 60px;
+        }
+        .back1{
+            position: relative;
+            bottom: 80px;
+            left: 230px;
+            width: 55px;
+        }
+        .back1 .mdui-icon{
+            font-size: 65px;
+            color: #4586F3;
+        }
+        .change{
+            display:none;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+        }
+        .select{
+            height: 70px;
+            width: 100%;
+            background: #fff;
+            line-height: 70px;
+            position: relative;
+            text-align: center;
+            font-size: 55px;
+            border: 0;
+            color: #4586F3;
+        }
+        .out{
+            display: block;
+            position: absolute;
+            height: 70px;
+            left: calc(50% - 150px);
+            opacity: 0;
+        }
+        #sheet_back{
+            font-size: 55px;
+        }
+        #newname{
+            font-size: 55px;
+        }
+    </style>
+</head>
+<body>
+<div class="headd">
+    <div class="clean"><i class="mdui-icon material-icons claer">clear</i></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;编辑个人资料
+    <div class="check"><i class="mdui-icon material-icons check1">check</i></div>
+</div>
+<div class="head">
+    <div class="header"><img src="" width="290px" height="290px" alt=""></div>
+    <div class="back1"><i class="mdui-icon material-icons mdui-ripple">add_a_photo</i></div>
+</div>
+<div class="kongbai"></div>
+<div class="edit">
+    <div class="sheet">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">请问你想叫什么？</label>
+            <input class="mdui-textfield-input" id="newname" type="text"/>
+        </div>
+    </div>
+    <div class="sheet">
+        <div class="rrr">
+        <label class="mdui-radio">
+            <input type="radio" name="group1" value="男" checked/>
+            <i class="mdui-radio-icon"></i>
+            男
+        </label>
+
+        <label class="mdui-radio">
+            <input type="radio" name="group1" value="女"/>
+            <i class="mdui-radio-icon"></i>
+            女
+        </label>
+        </div>
+    </div>
+    <div class="sheet">
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">请问你想说什么？</label>
+            <input class="mdui-textfield-input" id="sheet_back" type="text"/>
+        </div>
+    </div>
+</div>
+<div class="ok mdui-ripple">OK</div>
+<div class="change">
+    <div class="select mdui-ripple"><input type="file" accept="image/*" id="file" class="out">手机相册</div>
+    <!--<div class="select mdui-ripple"><input type="file" accept="image/*" capture="camera" id="camera" class="out">拍照上传</div>-->
+</div>
+<script>
+    var $headImg = $("img");
+    $headImg.attr('src',"img/head/"+$.cookie('usr')+".jpg");
+    var $clean = $(".clean");
+    $clean.click(function (e) {
+        $(location).attr('href','personal.html');
+    });
+    var $check = $(".check");
+    $check.click(uploadData);
+    var $ok = $(".ok");
+    $ok.click(uploadData);
+    function uploadData() {
+        var $new_uname = $("#newname").val();
+        if(!$new_uname)
+        {
+            alert('新名字不能为空');
+            return;
+        }
+        var $back = $("#sheet_back").val();
+        var checkbox = document.getElementsByName("group1");
+        var check;
+        for(var i = 0;i<2;i++)
+        {
+            if(checkbox[i].checked === true)
+                check = checkbox[i].value;
+        }
+        $.ajax({
+            url:"dataSheet.php",
+            type:"POST",
+            data:{
+                uname:$.cookie('usr'),
+                new_uname:$new_uname,
+                back:$back,
+                sex:check
+            },
+            dataType:"json",
+            success:function (e) {
+                if(e.success)
+                {
+                    alert('信息存入成功');
+                    changeImg($.cookie('usr'),$new_uname);
+                    $.cookie('usr',$new_uname);
+                    $(location).attr('href','personal.html')
+                }
+                else{
+                    alert('与服务器通讯失败');
+                    changeImg($.cookie('usr'),$new_uname);
+                    $.cookie('usr',$new_uname);
+                }
+            },
+            error:function (jqXHR) {
+                alert("发生错误"+jqXHR.status);
+                changeImg($.cookie('usr'),$new_uname);
+                $.cookie('usr',$new_uname);
+            }});
+
+    }
+    function changeImg(old,new_uname) {
+        $.ajax({
+            url:"fileName.php",
+            type:"POST",
+            data:{
+                old_uname:old,
+                new_uname:new_uname
+            },
+            dataType:"JSON"
+        })
+    }
+    var $head = $(".head");
+    $head.click(function (e) {
+        e.stopPropagation();
+        $(".change").css('display','block');
+        $(document).one('click',function (e) {
+            $(".change").css('display','none');
+        })
+    });
+    $(".change").click(function (e) {
+        e.stopPropagation();
+    });
+    var $file = $("#file");
+    $file.change(function (e) {
+        var current = $file[0].files[0];
+        uploadfile(current);
+        preview_picture(current);
+    });
+    function preview_picture(pic){
+        var r = new FileReader();
+        r.readAsDataURL(pic);
+        r.onload = function (ev) { $("img").attr('src',this.result).show() }
+    }
+    function uploadfile(cur) {
+        var formdata = new FormData();
+        formdata.append('username',$.cookie('usr'));
+        formdata.append('file',cur);
+        $.ajax({
+            url:"file.php",
+            type:"POST",
+            data:formdata,
+            processData:false,
+            contentType:false,
+            dataType:"JSON",
+            success:function (e) {
+                if(e.success)
+                {
+                    alert('头像上传成功');
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

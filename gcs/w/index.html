@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whoever</title>
+    <meta name="viewport" content="initial-scale=1.0" user-scalable="no">
+    <meta http-equiv="Content-Type" content="text/html;charsetutf-8">
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #contain{
+            height: 100%;
+        }
+        .search{
+            position:absolute;
+            left: 2%;
+            top: 5px;
+            width: 96%;
+            height: 35px;
+            background: #fff;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,.5);
+            font-family: "Microsoft YaHei UI";
+        }
+        .k{
+            opacity: 0.5;
+            position: relative;
+            display: inline-block;
+            top: 5px;
+            left: 5px;
+            width: 24px;
+        }
+        input{
+            color: #000;
+            display: block;
+            border: none;
+            border-bottom:1px solid lightgrey;
+            height: 25px;
+            width: 100%;
+        }
+        input:focus{
+            outline: none;
+            border-bottom-color: #4586F3;
+        }
+        .in{
+            position: absolute;
+            left: 34px;
+            top: 5px;
+            height: 25px;
+            width: calc(100% - 50px);
+            line-height: 25px;
+            color: #909090;
+        }
+        .foot{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background: #fff;
+            border-top: 1px solid lightgrey;
+            box-shadow: 0 2px 6px rgba(0,0,0,.5);
+        }
+        .mes{
+            display: inline-block;
+            color: #909090;
+            position: relative;
+            left: 30px;
+            top: 0;
+            height: 30px;
+            width: 30px;
+        }
+        .redPoint{
+            display: none;
+            width: 7px;
+            height: 7px;
+            position: absolute;
+            background: #EB4334;
+            z-index: 10;
+            border-radius:5px;
+            top: 3px;
+            left: 23px;
+        }
+        .mes:active
+        {
+            color: #4586F3;
+        }
+        .mes .mdui-icon{
+            font-size: 28px;
+        }
+        .map{
+            display: inline-block;
+            color: #909090;
+            position: absolute;
+            left: calc(50% - 12px);
+            top: 0;
+            height: 30px;
+            width: 30px;
+        }
+        .map:active{
+            color: #4586F3;
+        }
+        .map .mdui-icon{
+            font-size: 28px;
+        }
+        .per{
+            display: inline-block;
+            color: #909090;
+            position: absolute;
+            right: 30px;
+            top: 0;
+            height: 30px;
+            width: 30px;
+        }
+        .per:active{
+            color: #4586F3;
+        }
+        .per .mdui-icon{
+            font-size: 28px;
+        }
+        .font{
+            color: #909090;
+            font-size: 10px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .operate{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            bottom: 47px;
+            left: calc(50% - 25px);
+        }
+        .op{
+
+            border: 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.8;
+            box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+        }
+        .operate .mdui-icon{
+            font-size: 50px;
+            color: #4586F3;
+        }
+        .site{
+            border: 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.8;
+            box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            bottom: 47px;
+            left: 5px;
+        }
+        .site .mdui-icon{
+            font-size: 40px;
+            color: #4586F3;
+        }
+        .sites{
+            position: relative;
+            
+        }
+        .round{
+            width: 33px;
+            height: 33px;
+            border: 2px solid #fff;
+            opacity: 0;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+
+            line-height: 32px;
+            text-align: center;
+        }
+        .car{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            background: #4586F3;
+            top: -110px;
+            left: 3px;
+        }
+        .walk{
+            position: absolute;
+            background: #3b5998;
+            top: -65px;
+            left: 60px;
+        }
+        .food{
+            position: absolute;
+            background: #848c9a;
+            top: -65px;
+            left: -48px;
+        }
+        .round .mdui-icon{
+            color: #fff;
+            font-size: 28px;
+        }
+         .car .mdui-icon{
+            font-size: 30px !important;
+        }
+        .animate{
+            animation-delay: 0s;
+            animation-duration: 0.35s;
+            animation-fill-mode: forwards;
+            animation-name: showmenu;
+        }
+        .del_animate{
+            animation-delay: 0s;
+            animation-duration: 0.35s;
+            animation-fill-mode: forwards;
+            animation-name: del_menu;
+        }
+        @keyframes del_menu {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                left: 20px;
+                top: -10px;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+        }
+        @keyframes showmenu {
+            0% {
+                left: 20px;
+                top: -10px;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .mdui-textfield-focus .mdui-textfield-input,.mdui-textfield-focus .mdui-textfield-input:hover{
+            border-bottom-color: #4586F3 !important;
+            box-shadow:0 1px 0 0 #4586F3 !important;
+        }
+        .mdui-textfield-floating-label.mdui-textfield-focus .mdui-textfield-label{
+            color: #4586F3;
+        }
+        .mdui-textfield-label{
+            position: relative;
+            left: 10px;
+            font-size: 10px;
+        }
+        .mdui-textfield-input{
+            position: relative;
+            left: 10px;
+            width: 80%;
+            height: 30px;
+        }
+        .getcar{
+            background: rgba(0,0,0,.4);
+            position: fixed;
+            display: none;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .blue{
+            line-height: 30px;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background: rgb(196,227,255);
+        }
+        .info{
+            position: absolute;
+            top: calc(50% - 80px);
+            left: calc(50% - 110px);
+            height: 150px;
+            width: 220px;
+            background: #fff;
+            border-radius: 3px;
+            box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+        }
+        .getnext{
+            position: absolute;
+            width: 50px;
+            height: 25px;
+            left: 150px;
+            top: 100px;
+            border: 1px solid #4586F3;
+            color: #4586F3;
+            line-height: 25px;
+            text-align: center;
+        }
+        .infoWindow{
+            position: relative;
+            width: 95%;
+            height: 95%;
+            border: 4px solid #4586F3;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .shenqing{
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid #4586F3;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            color: #4586F3;
+        }
+        .baidulaji{
+            display: none;
+            z-index: 999;
+            position: absolute;
+            bottom: 110px;
+            left: calc(50% - 65px);
+            background: #4586f3;
+            color: #fff;
+            width: 130px ;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+    <script src="http://api.map.baidu.com/api?v=3.0&ak=tMkMiGmhEKolEY0gHfaQuNmEzhV9VF8B"></script>
+</head>
+
+<body class="mdui-theme-primary-lightblue mdui-theme-accent-lightblue">
+
+<div id="contain"></div>
+<div class="search">
+    <div class="k">
+        <i class="mdui-icon material-icons" >search</i>
+    </div>
+    <div class="in">
+        搜索你想去的场所
+    </div>
+</div>
+<div class="baidulaji">点击见效快</div>
+<div class="site mdui-ripple">
+    <i class="mdui-icon material-icons">adjust</i>
+</div>
+<div class="operate">
+    <div class="op mdui-ripple">
+        <i class="mdui-icon material-icons">explore</i>
+    </div>
+    <div class="sites">
+        <div class="round car mdui-ripple">
+            <i class="mdui-icon material-icons" id="car">directions_car</i>
+        </div>
+        <div class="round walk mdui-ripple">
+            <i class="mdui-icon material-icons" id="account">account_circle</i>
+        </div>
+        <div class="round food mdui-ripple">
+            <i class="mdui-icon material-icons" id="restaurant">restaurant</i>
+        </div>
+    </div>
+</div>
+<div class="foot">
+    <div class="mes ">
+        <i class="mdui-icon material-icons ">send</i>
+        <div class="font">信息</div>
+        <div class="redPoint"></div>
+    </div>
+    <div class="map ">
+        <i class="mdui-icon material-icons">map</i>
+        <div class="font">地图</div>
+    </div>
+    <div class="per ">
+        <i class="mdui-icon material-icons">person_outline</i>
+        <div class="font">个人</div>
+    </div>
+</div>
+<div class="getcar">
+    <div class="info">
+        <div class="blue">the car</div>
+        <div class="mdui-textfield mdui-textfield-floating-label">
+            <label class="mdui-textfield-label">请问你想去哪？</label>
+            <input class="mdui-textfield-input" id="wantGo" type="text"/>
+        </div>
+        <div class="getnext mdui-ripple">next</div>
+    </div>
+</div>
+
+<script>
+    if(!$.cookie('usr')||$.cookie('usr')===" ")
+    {
+        alert('请先登录');
+        $(location).attr('href','login.html');
+    }
+    //固定body高度
+    $("#text").keypress(function (e) { //注意函数的使用
+        if (e.keyCode === 13)
+            alert(13)
+
+    });
+    //颜色改变
+    $(".map").css("color","#4586f3");
+    $(".map .font").css("color","#4586f3");
+    //点击监听
+    var search = $(".search");
+    search.click(function () {
+        $(".getcar").css("display","block");
+
+
+        $(document).one("click",function (e) {
+            e.stopPropagation();
+            $(".getcar").css('display','none');
+        })
+    });
+
+    var $mes = $(".mes");
+    $mes.click(function (e) {
+        $(".redPoint").css("display","none")
+        $(location).attr("href","news.html");
+    });
+    var $per = $(".per");
+    $per.click(function (e) {
+        $(location).attr("href","personal.html");
+    })
+
+</script>
+<script>
+    var username = $.cookie('usr');
+    var map = new BMap.Map("contain");
+    map.disableDoubleClickZoom();
+    var point="";
+    var icon = new BMap.Icon("img/author/yourself.png",new BMap.Size(20,20),{
+            anchor:new BMap.Size(10,20)
+        });
+    //初始化中心点位自己的位置
+    var geolocation = new BMap.Geolocation();
+    geolocation.enableSDKLocation();
+    geolocation.getCurrentPosition(function (r) {
+        if(this.getStatus() === BMAP_STATUS_SUCCESS)
+        {
+            point = r.point;
+            //在这里完成初始化
+            map.centerAndZoom(r.point,16);
+            var marker = new BMap.Marker(r.point,{icon:icon});
+            map.addOverlay(marker);
+            $.ajax({
+                type:"POST",
+                url:"latlng.php",
+                data:{
+                    lat:point.lat,
+                    lng:point.lng,
+                    name:username+""
+                },
+                dataType: "json"
+            });
+        }
+    });
+
+
+    var opts = {offset: new BMap.Size(5, 50)};//宽和高
+    map.addControl(new BMap.NavigationControl(opts));
+
+
+
+    //双击事件，设置目的地
+    //点击出现三个选项
+    var $site = $(".site");
+    var $op = $(".op");
+    var $rou = $(".round");
+    $site.click(function (e) {
+       map.panTo(point);
+    });
+    $op.click(function (e) {
+        e.stopPropagation();//防止点击该元素也收回,禁止冒泡
+        $rou.removeClass("del_animate");
+        $rou.addClass("animate");
+
+        map.addEventListener("touchstart",function () {
+            $rou.removeClass("animate");
+            $rou.addClass("del_animate");
+            map.removeEventListener("click");
+        });
+        $(document).one("click",function () {
+            $rou.removeClass("animate");
+            $rou.addClass("del_animate");
+        });
+    });
+
+    $(".info").click(function (e) {
+       e.stopPropagation();
+    });
+    var $car = $("#car");
+    $car.click(function (e) {
+        e.stopPropagation();
+        if($car.css('opacity')!==0)
+        {
+            $(".getcar").css('display','block');
+            $(document).one("click",function (e) {
+                e.stopPropagation();
+                $(".getcar").css('display','none');
+            })
+        }
+    });
+
+    var $res = $("#restaurant");
+    $res.click(function () {
+        alert("暂时没有饭店，少惦记吃的")
+    });
+
+
+    var $account = $("#account");
+    var $friendAtt = [];
+    var $lat = [];
+    var $lng = [];
+    $account.click(function (e) {
+        $.ajax({
+            url:"friendAttempt.php",
+            type:"POST",
+            data:{
+                lat:point.lat,
+                lng:point.lng
+            },
+            dataType:"JSON",
+            success:function (e) {
+                if(e.success)
+                {
+                    $friendAtt = e.name.split(" ");
+                    $lat = e.lat.split(",");
+                    $lng = e.lng.split(",");
+                    for(var i = 0;i<$friendAtt.length-1;i++)
+                        friendAtt($friendAtt[i],$lat[i],$lng[i]);
+                }
+            }
+        })
+    });
+    icon2 = new BMap.Icon("img/author/people.png",new BMap.Size(16,16),{
+        anchor:new BMap.Size(8,16)
+    });
+    var temp_uname;
+    function friendAtt(uname,lat,lng) {
+        var point = new BMap.Point(lng,lat);
+        var maker = new BMap.Marker(point,{icon:icon2});
+        temp_uname = uname;
+        map.addOverlay(maker);
+        addFriend(maker,uname,point);
+    }
+    function addFriend(maker,name,point1)
+    {
+        var opts = {
+            width:200,
+            height:100
+        };
+        var content = '<div class="infoWindow"><div><img src="img/head/'+name+'.jpg" width="60px" height="60px" class="head"/></div>'+name+'<div class="shenqing mdui-ripple'+' '+name+'" >来聊天吧</div></div>';
+
+        // var $head = $(".head");
+        // var $shenqing = $(".shenqing");
+        // for(var i = 0;i<$head.length;i++)
+        // {
+        //     if(!$($head[i]).attr("data"))
+        //     {
+        //         $($head[i]).attr("src","img/head/"+name+".jpg");
+        //         $($head[i]).attr("data",name);
+        //         $($shenqing[i]).attr("data",name);
+        //     }
+        //
+        // }
+
+        var infoWindow = new BMap.InfoWindow(content,opts);
+        maker.addEventListener("click",function () {
+            $(".baidulaji").css("display","block");
+            $(".baidulaji").on("click",function () {
+                clickShen();
+                $.cookie("chat_uname",name);
+                $(location).attr("href","chat.html");
+            });
+
+            map.openInfoWindow(infoWindow,point1);
+            $(".head").load = function () {
+                infoWindow.redraw();
+            }
+        })
+    }
+    function clickShen() {
+        // var data = $(this).attr("data");
+        $.ajax({
+            url:"friend.php",
+            type:"POST",
+            data:{
+                uname:$.cookie('usr'),
+                AttName:temp_uname
+            },
+            dataType:"JSON",
+            success:function (e) {
+                if(e.success)
+                {
+                    alert('已发送请求')
+                }else{
+                    alert('与服务器连接失败')
+                }
+            }
+        })
+    }
+
+     icon1 = new BMap.Icon("img/author/dingwei.png",new BMap.Size(20,32),{
+        anchor:new BMap.Size(10,30)
+    });
+    var distance = 0;
+    map.addEventListener("dblclick",function (e) {
+            map.clearOverlays();
+            var marker = new BMap.Marker(e.point,{icon:icon1});
+            map.addOverlay(marker);
+            distance = parseInt(map.getDistance(e.point,point)+"");
+            alert(e.point.lat+" "+e.point.lng);
+            if(distance < 20)
+            {
+                alert("已接近目的地");
+            }else {
+                alert("您距离该地点"+distance+"米");
+            }
+    });
+
+
+    var name1=[] ;var lat=[] ;var lng=[] ;
+    $(".getnext").click(function (e) {
+        $(".getcar").css('display','none');
+        $rou.removeClass("animate");
+        $rou.addClass("del_animate");
+        var site = $("#wantGo").val();
+        $.ajax({
+            type:"POST",
+            url:"goTo.php",
+            data:{
+                lat:point.lat,
+                lng:point.lng,
+                site:site,
+                name:username
+            },
+            dataType: "json",
+            success:function (e) {
+                if(e.success)
+                {
+                     name1 = e.name.split(" ");
+                    lat = e.lat.split(",");
+                    lng = e.lng.split(",");
+                    map.clearOverlays();
+                    for(var i = 0;i<lat.length-1;i++)
+                    {
+                        var point1 = new BMap.Point(lng[i],lat[i]);//顺序别弄反了
+                        var marker = new BMap.Marker(point1,{icon:icon1});
+                        map.addOverlay(marker);
+                        addinfo(marker,name1[i],point1);
+                    }
+                }
+                else{
+                    alert('与服务器通讯出现故障');
+                }
+            }
+        })
+    });
+    function addinfo(maker,name,point1)
+    {
+        // var opts = {
+        //     width:200,
+        //     height:100,
+        //     title:name
+        // };
+        // var infoWindow = new BMap.InfoWindow('距离您'+parseInt(map.getDistance(point,point1)+"")+"米",opts);
+        // maker.addEventListener("click",function () {
+        //     map.openInfoWindow(infoWindow,point1);
+        // })
+        var opts = {
+            width:200,
+            height:100
+        };
+        var content = '<div class="infoWindow"><div><img src="img/head/'+name+'.jpg" width="60px" height="60px" class="head"/></div>'+name+'<div class="shenqing mdui-ripple'+' '+name+'" >询问</div></div>';
+        $("."+name).on("click",function () {
+            $.cookie("chat_uname",name);
+            $(location).attr("href","chat.html");
+        });
+
+        var infoWindow = new BMap.InfoWindow(content,opts);
+        maker.addEventListener("click",function () {
+            $(".baidulaji").css("display","block");
+            $(".baidulaji").on("click",function () {
+                clickShen();
+                $.cookie("chat_uname",name);
+                $(location).attr("href","chat.html");
+            });
+
+            map.openInfoWindow(infoWindow,point1);
+            $(".head").load = function () {
+                infoWindow.redraw();
+            }
+        })
+    }
+
+    // var $uname = $.cookie('usr');
+    // setInterval("scrollAsk()",5000);
+    // function scrollAsk()
+    // {
+    //     $.ajax({
+    //         type:"POST",
+    //         url:"Ask.php",
+    //         data:{
+    //             uname:$uname
+    //         },
+    //         dataType:"JSON",
+    //         success:function (e) {
+    //             if(e.success)
+    //             {
+    //                 $(".redPoint").css("display","block")
+    //             }
+    //         }
+    //     })
+    // }
+</script>
+</body>
+</html>

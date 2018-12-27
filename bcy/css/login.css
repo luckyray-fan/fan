@@ -1,0 +1,124 @@
+.i-wechat-s {
+  background-image: url(//img-bcy-qnpubin.pstatp.com/Image/icon/sprite-355adf4214.png);
+  background-position: -248px -76px;
+  width: 30px;
+  height: 30px;
+}
+
+.i-sina-s {
+  background-image: url(//img-bcy-qnpubin.pstatp.com/Image/icon/sprite-355adf4214.png);
+  background-position: -278px -76px;
+  width: 30px;
+  height: 30px;
+}
+
+.i-qq-s {
+  background-image: url(//img-bcy-qnpubin.pstatp.com/Image/icon/sprite-355adf4214.png);
+  background-position: -274px -108px;
+  width: 30px;
+  height: 30px;
+}
+
+.form_center .inputLine, .form_box .inputLine {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form_center .inputLine .input, .form_box .inputLine .input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+}
+
+.form_center .verify-img, .form_box .verify-img {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  height: 42px;
+  width: 110px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.form_center .inputLine .input_error, .form_box .inputLine .input_error {
+  font-size: 14px;
+  line-height: 1;
+  color: #e74747;
+}
+
+.form_center .inputLine.error, .form_box .inputLine.error {
+  padding-right: 35px;
+}
+
+.form_center .inputLine .input, .form_box .inputLine .input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+}
+
+.form_center #codeBtn, .form_box #codeBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+.form_center .inputLine .input, .form_box .inputLine .input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+}
+.form_center.login, .form_box.login {
+  box-sizing: border-box;
+  width: 480px;
+  padding: 0 40px 20px;
+  border-radius: 4px;
+  background-color: white;
+}
+.form_center {
+  box-sizing: border-box;
+  position: absolute;
+  width: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shareBox, .smallCards li:hover, .publish-loaf, .viewAppDown, .form_center {
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+}
+._box, .form_center {
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 4px;
+}
+.form_center.login .logo-login, .form_box.login .logo-login {
+  display: block;
+  width: 270px;
+  height: 110px;
+  margin: 40px auto 40px;
+}
+.form_center #codeBtn, .form_box #codeBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 3;
+}

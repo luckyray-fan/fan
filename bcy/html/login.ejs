@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<%= require('./template/nav.html') %>
+<div class="js-hideFooter bgAll posr">
+    <div class="form_center login">
+        <form action="/public/dologin" method="post" id="regform" name="reg">
+            <img src="//img-bcy-qnpubin.pstatp.com/Image/logo/logo_login-a89c2798ad.png" class="logo-login"
+                 alt="半次元--二次元爱好者社区">
+            <div class="js-account hide">
+                <div class="inputLine">
+                    <input type="text" placeholder="手机号或邮箱" id="email" name="email" class="input" title="邮箱"
+                           autocomplete="off" value="" autofocus="">
+                </div>
+                <div class="inputLine">
+                    <input type="password" placeholder="您的密码" title="密码" value="" id="password" name="password"
+                           class="input" require="true" datatype="limit" min="6" max="20" msg="密码由6-20个字符组成">
+                </div>
+            </div>
+            <div class="js-mobile">
+                <div class="inputLine error">
+                    <input type="text" placeholder="手机号" id="mobile" name="mobile" maxlength="11" class="input"
+                           title="手机号" autocomplete="off" value="" autofocus="">
+                </div>
+                <div class="inputLine posr">
+                    <input class="input" id="code" placeholder="短信验证码" maxlength="4" type="text" name="code">
+                    <button id="codeBtn" class="_btn _btn--red _btn--negative _btn--no-hover" data-counting="false"
+                            disabled="disabled">点击获取
+                    </button>
+                    <p class="input_error js-tip-code hide mt10"></p>
+                </div>
+            </div>
+            <div class="inputLine posr js-verify-img-wrap hide">
+                <input class="input" id="pcode" placeholder="验证码" autocomplete="off" maxlength="4" type="text"
+                       name="pcode">
+                <img src="" class="js-verify-img hide verify-img">
+                <p class="input_error js-tip-pcode hide mt10"></p>
+            </div>
+            <div class="inputLine mb30">
+                <a href="javascript:void(0)" class="l-left js-change-login fz14">密码登录（手机号或邮箱）</a>
+                <a href="/home/public/sendmobilepassword" class="l-right mobile">忘记密码?</a>
+            </div>
+            <input type="" value="登录" class="_btn--long-red mb20" onclick="login()">
+            <div class="inputLine l-clearfix">
+                <a class="l-left db mr15 js-wechat-login" href="javacript:void(0)"><i class="i-wechat-s"></i></a>
+                <a class="l-left db mr15 js-sina-login" href="javacript:void(0)"><i class="i-sina-s"></i></a>
+                <a class="l-left db mr15 js-qq-login" href="javacript:void(0)"><i class="i-qq-s"></i></a>
+                <a class="l-right fz16 lh30 db" href="register.html">注册账号</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+  var phone = document.getElementsByClassName('js-account')[0];
+  var email = document.getElementsByClassName('js-mobile')[0];
+  var change = document.getElementsByClassName("js-change-login")[0];
+  change.addEventListener("click", toggle);
+
+  function toggle() {
+    if (phone.classList.contains("hide")) {
+      phone.setAttribute("class", "js-account");
+      email.setAttribute("class", "js-mobile hide");
+    } else {
+      email.setAttribute("class", "js-mobile");
+      phone.setAttribute("class", "js-account hide");
+    }
+  }
+
+  function login() {
+    var uname = document.getElementById('email');
+    var pass = document.getElementById('password');
+    var sendText;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/login.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    sendText = "uname=" + uname.value + "&pass=" + pass.value;
+    xhr.send(sendText);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var con = JSON.parse(xhr.responseText);
+        var name = con.msg;
+        if (con.s)
+        {
+          layer.msg('欢迎登陆 '+ uname.value);
+          $.cookie('uname',uname.value);
+          setTimeout("location.href = \"./index.html\";",2000);
+        }
+      }
+    }
+  }
+
+</script>
+</body>
+</html>

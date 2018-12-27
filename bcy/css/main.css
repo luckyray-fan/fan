@@ -1,0 +1,53 @@
+@import './template/asset.css';
+@import './template/nav.css';
+@import './template/normal.css';
+@import './template/footer.css';
+@import './template/interact.css';
+@import './template/leftNav.css';
+@import './template/midea.css';
+@import 'index.css';
+@import 'illust.css';
+@import 'discover.css';
+@import 'video.css';
+@import 'register.css';
+@import "login.css";
+@import "coser.css";
+@import "novel.css";
+html {
+  height: 100%;
+}
+body {
+  font-family: -apple-system, Helvetica Neue, PingFang SC, \\5fae\8f6f\96c5\9ed1,
+    \\5b8b\4f53, \\9ed1\4f53, arial, sans-serif;
+  box-sizing: border-box;
+  color: #333333;
+  font-size: 12px;
+  background-color: #f0f0f0;
+}
+* {
+  box-sizing: border-box;
+}
+.l-header{
+  position: relative;
+}
+.usr-name{
+  position: absolute;
+  top: 50%;
+  transform:translateY(-50%);
+  right: 20px;
+  height: 30px;
+  width: 50px;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+.usr-name:after {
+  content: ' ';
+  width: 30px;
+  height: 4px;
+  background-color: #ff6fa2;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+}

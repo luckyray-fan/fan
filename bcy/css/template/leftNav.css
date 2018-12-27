@@ -1,0 +1,48 @@
+#leftNav {
+  width: 230px;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  transform: translateZ(0);
+  background-color: #36343f;
+  z-index: 10000;
+}
+.navBox {
+  display: block;
+  box-sizing: border-box;
+  padding-left: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.workTitle img {
+  width: 230px;
+  height: 65px;
+}
+
+.navLinks {
+  display: block;
+  margin: 20px 0;
+  color: #ff6fa2;
+  font-size: 16px;
+  line-height: 1;
+}
+.i-arrow-next-left:after {
+  display: inline-block;
+  margin-left: 5px;
+  content: '';
+}
+.i-arrow-next-red,
+._icon-hover:hover .i-arrow-next,
+._icon-hover:hover .i-arrow-next-left:hover:after,
+.i-arrow-next-left:after {
+  background-image: url(//img-bcy-qnpubin.pstatp.com/Image/icon/sprite-355adf4214.png);
+  background-position: -298px -172px;
+  width: 10px;
+  height: 10px;
+}
+.tagsTitle {
+  color: #999;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,48 @@
+.container {
+  clear: both;
+}
+.col-big {
+  width: 870px;
+  float: left;
+  position: relative;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e0e0;
+}
+.attent-num-large {
+  background-image: url(//img-bcy-qnpubin.pstatp.com/Image/group/circle-num-large-cf8b2b6890.png);
+  width: 38px;
+  height: 41px;
+  color: #2db2ea;
+  line-height: 16px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 2px;
+}
+.l-group-list-title {
+  margin-left: 55px;
+}
+.l-group-list-title .group-list-name {
+  height: 18px;
+}
+.groupHotList {
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+.col-small,
+.l-hotFix {
+  width: 300px !important;
+}
+.col-small {
+  width: 230px;
+  float: right;
+  position: relative;
+}
+.group_right_banner {
+  width: 300px;
+  height: 150px;
+  margin-bottom: 15px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}

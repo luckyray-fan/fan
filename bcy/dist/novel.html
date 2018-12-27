@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  <link href="main.css" rel="stylesheet"></head>
+  <body>
+    <script src="layer/jquery.js"></script>
+<script src="layer/layer.js"></script>
+<script src="layer/jquery.cookie.min.js"></script>
+<header id="l-header" class="_box">
+  <nav class="site-nav">
+    <a href="" class="site-nav_logo">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANYAAABOCAMAAABrCBgyAAAC/VBMVEUAAABcmtFsltVtktRultVsl9VliMtJgnxikNFtldVci89rldRtltVtltZultVtldZpks1tlNRmls1plNBulNRqkNFtldVtldVmjc9uldVukdRsldRultdslNJpj89sk9NljM9qlNVpltVPi8ZrlNRrlc9tltVvmNlrk9RtldaDNtFrk9NtlNJuldYItMBtl89rltRtldRtltVsldNultdtldVtldRtldVvmNhsltVsldNnlc//j71rltVtltZtldVslNX/kL5vmNhtltZskdP/kr1tldVtldVtltRtldRtltf/jr//bqpslNT///9nldBul9f/ZKT/p8ZtldVul9Zol87/Zab/aqj/fbP/f7T/caz/aKf/ban///9ul9Zwmdn/b6lsldT/ZKX/d6//cav/cqz/OZ3/ZaT/irn/c67/c6v/da7/ZaZwmdv/iLv/ban/aqn/YqP/ZKT/aaf/ZqX/8vtrlNT/g7b/fLL/a6j/Z6f/da3/WaH/ZaX/aaf/bKj/cq7/bqn/gLP///////9qk9Fwmdn/dK3/e7H/aKb/aqj/cKr/X6H/YqP/YqP/d6////////////////9ynuD/XqT/YKT/////////////////////////////////////////////eLH/6fH/frT/qcz/////////////////8vf/////zd//////////////////////////a6f/YaP///9ultVym9xvl9dznN7/XqJwmNj/W6Bultb/Zqn/YKNwmdlynd7/ZKdxmtp2oOP/Wp//Y6Vxmtv/Y6T//P10nuD/XaD/aav/YaT/ZqZxnN10n+L/Z6pvmNf/+fv/yuBxm9v/d6//aqj/xdz/grX/5e//2un/8Pb/3uv/b6v/9vn/1eb//v//jLv/erH/osj/c63/kL3/0uP/Vp3/wdr/8/j/6fH/q83/mMP/zuL/s9L/n8b/lMD/frJ3oub/r8//hrj/qMz/u9f/uNX/x97/7PP/nMT/ttP/4O16puyimmrrAAAAtHRSTlMAC+U37n8WAQ35CHH2/tC0J44TF4Uq6t4alEGZ8k4fgBE+QgZgMNX9OqIDRVr9Ay9Hu7FK2uTAzPluUiQRZ8h5qQzruDQhnnSDa6YXxIcEIeT2CMWtLf3aSzas95Pe4e8gi+qMXaEEsC+BdUPv4ijN5XzW8sIKVkFX4GaaGuOm1C+8YaMSTNNTerehb0Ly3WiDPiQ7uF78e568V8dGrI/v9x9b2ZK4YWJcZeXmzvQnhvHKweyCq6kDAAAOYUlEQVR4AezSgWbDQBzH8QNGHyZPcBAEJJBil0uKSts12abt1rItMdsC7Tb0HfYKOwB/HM7hf+HeaCswzOkwktnnDb5+P+L2bxgukqp6C/5MDy22VT1fvseAFtezkPSbT3nyWs8f8hgtgDRafDKWLUgvnQxDnuzqZ5afIgAobcRXsPR71nMW8O1u9MTyFsBKpYz4Du57s0/Ab8tRxC5bsIce4SIjj3ScHzw25Ut0vW4lWim1OIK6p6SraMCb81nEMg0IUhrxA1nRvb/R8U1zlW7uMo0oHT0OcEE6w6PjZFqmm1WsDndTzh432BM3bzAYkN9XTCdptIpbBHD0HM1OiNMHK2bB3bavxmGNqJAyM+OgHTPDHTNfZmZmJvoykWI7Tp02c0P7N12ZmYnGdM6VLKd2YyXL3elzSHHx8Sv99Eqpe0ymvxwGHyC++vzZnVfKAYPNCRvZFACN0/cfPKbb6SpR8xvAoCDyZDwdFUU7HY/OAErkzSTAZAfP847kbGBkzY3Prmfy2aO6Uv28hhRoFan/7mVgoOikpTGODrdv4RCfQce3Pus5sZ85Iy/xCDn3sr6Uu9vBMfGkaZH327rVkZEELeGNfUaEyYO4fTsCtSKqLMhae4BVXJMDIUskYGmlWBETPg74+cbj1bES2pckiQ4/ucZoC8/xCDlSUgO0ciwI2XenAiN5JTbUtD6BqZXcWMvk6XK1Ln93dYrlXepqnvfXq52R8BtTHAj5YiJWaGXt43BJPkW3litJKoplBo8QF5WWuMylDfH+IC08t4HJudLlOfiF+lWpVV8XhHBEVjPjS8DIgRKikFag01p3wo4fVRXQfNxdslWh5Ah+kL2+CSFk42s1Ht1cA8JllbTEVxDTPyxQLWbCx9Uim2dXvE7rrMeOHFcPAgwRsdoUHMW4pIk8CsTmyAu/6fve/6ElikKQYrVNQUIL/fqTfwAGEdWN1rJs/SQsr/yMJzMdMLSyk63Yw6piVyLCvisXhMvli+GvLde7jk5R0oefJChI8jOo4B4TaQ9/mbmLplUGJmF22p+BSmqynVNoxVpkZdm2pPhZG01y7iwIn388CbtWYxA2P/PnuCTKoqt9dHh4uK2voeE9pHSbiXb9z0OeJGOJVhoIoLx0R4XCjiKQR6KEj9vs51QUh6y7Nyp78YegK/WLNWGHXQfEdNQLilND54vXvW+mmpub+3um37uhyqJIyvrvzzFapvQ8lbNbcdYfqchXKY0wlNXkRKgp8yDwk4M/80cB5tRndq8Nybdp+/KlcLWk9mm6fhpE2dz5qssNWdBy1fwUGDjvWV4qCGN1qDgd6YY9rpHMuc8DUJCbm7sJu2Q2IXtKPG2prKHh9wDCN9tXTDSvOsEkYywsqSItoyPdZMhkUFldT/4KDFT7EBv7DhBA/l98nANn5rbqb3/m20fB5iOtCLXS3rjCiULjrAKE71zTdYTS8yHi0zAy0mDwEhehSj8MwbhAqvV1lpZNRc1rPw6DFsi9tG8fruHBKIe1dg9IbMRWN+hU3dHIK/h8ip+d9MNk4OBVHu2hCf/rel1ONw8Oec3iAoQLYqAWSbswcHeKWOvLwMCZWls0pQlhrEj9hPaxtqNS4voTJ/6+5Pisz/BN+9QGIuFojsLRo+eb8BdNlxITq6x4UJWjci5L7Z50WqNTcE4wi2+xlmyoVgcMi0msVff7TSCQhLzSdZT9JDKq8CdKUQEIQoaP1CELpJ6xxIFAknCe+jaQDsyCv2knCOA3uswQJ2HzkmB2vZ0VJENkDMCwmBoVQic8+YdIIATninquSiHhQtuszcaTDv4tFpKOB0i7nAUC+KKycQmyQLSeu+G7CbPknXkZuLgkVxcMjxnZ7PpWiCtruh3HgWAUfP6z+TQeShDGmkKUjKzbaqNdMlvrvzXKqnrRJtCSTC1Kwmg/3YAEryCKktrM9sDw6MJv5PZPQXBuhaxWQrXPUrxRWY00O8m/zCAfl9JZGVTrm0RLnINdfdhrYgbCnnbB3A1bvFhluGNgctFFBPGYHYDsjH/8MxCcU7TLYJNXzCP0aIPSJHKIYDkGWJA8secH1fraA5zwIo65cZcoDk0rb1t+AXuwpTwJMd2dIhHvdIco0BuoQd7Ik2+AFRyN0ag2cQhxmVUnq04uP0uLUDuos5lOLLJrO6BNPNfE4W+NBQyOWhC3ZTvxY2odIgkvmVsgfLnUAZv7oXvIKww3w1nRLLU9H54dgP049M3eoeDlmRHaX0ON/jYhIOE3FTdaNOwIwzmdzlaLCh+VSrvFmFYc2/zegyQ3kptwH3hgrTXIOjzDo6bkBDyoZGpd/m29cmbvhdANx4c7++Frr1kYUA4ZgiiI0gt3Dw43cTZ4rVzCypX3Qq77+8qE3+tAoeDWE62I/ScseMxX05XFY8FzII5H1vUHgYGIYjuym7b5tQwBv+mrytFEJtXoxgnxmrxteQROu2hWSPIMOW+II1rfN/uuGeqYE3Ex56BGr6v+zsqEN+mr5USYJjrWVSt3j4VsrE2XCvyHafvaVJAUxeHVVQ4CySrB1mWArUV4SBN+tNcNe4ZF79AgnBel9mdjgj/azZ042+QZqPKmT55QHSkDAtZqgRru50JAwu84G6lxJprEtv7J2cpycv1nwdl2ohAQDl61qycsUjXHYWOTTy6mDgdqJWzIBirfqFH/+5FB2NsuuHrhgBfXSNc9kb1ZnocqHbJZapjWr6UlWSAPNF6Kt++BoBwkBShj7ET7mvi/rAOE+COkdTBtJuttPV5jmaVgJXE+coMTG6iV33j18DY14evUqnhf4RQzezsnnwtmA/JLfXckrmg5ujv7JqGe6faaEAmfxNYitx3nE2ire5L81/sqtKu4XVeAnv12jlzubArUOtxqd568RRP+9nIjMQfxBBREhpUa9oReXFihF+pxT8GVjNX98yO0cqkHSNjj011mxheT+XZkI9A4S26xbCX02wst2uHmGB4/olviBXr5pMZhtySFOBsT3CMTE0PNMCQdn/wybC0Dt0wWbOW7sRlQ/kwkfHvil+0zSK1QbRlY1mrdT/v+TA6PK2kUatfVQtt8p2BmIrZotel41QND0zP694/WqjxBotJxVduE03jSbOyhE7TgJ3/x2cjn4gRNi1ufgW9IM5KtZKO/QrV+T7W0jpeFMBfcYRoamP3B9Y/T2pxWYieNYGa+7hkOEDIPyfa18YbDgTDOq0WAUklmLMfX8jzfhEetVZu0hP8gwjhcSbPSYEDMQt+UcRaG6OFvhdJK2O1UrFa0DbGfcRKvb+fhbeAkj8j46rrlFpPMUQ1LJaD87fFHaHW3dUPoniWx/0ruNVaw73ehDiYhJmF6phW1ngjYXkvxxLRZTvyZeBfjIW+6BfxsO+bhbH44T1UEoNyt+witjokBrDXahos2InQxZuFfQTCKou1Wz3kQhE2Fdo/pFAig9KrHfpOutqITFud5fS7mlmVyKraom6lA5Xe32SYhD8e93gU3nDNPjLXMyGOM5r7lf93ZA5TjWhzH8d8wzdgW0q5t27Zt29bR2uazscwiozvKqvts2zY27c04aLrOZyx8T/q/0VKoSbJ5NpiRDFU+sWEKA9mVg6xp/S4MymgWlxYnkV5HoliH6VeNZxX+/cWbn2W89kPBF7kf/aVwVP/Ow1BlkS7/VYX7POCKnnOz3VkyfnntvR/fOv3WKyoXDR/BvbbGcBYNowugiqcn4h4bfsNwlr4nu+Ee079/THfHhjy1HvfYYkE/ix48GTBiAVSExYdacDvFdW0BBavz9LMu/2kwax3UhFxKCMft5P9fXSjoME93hacnJgZ8uF09KyDKUjOs9AarSj/S4RdWU/lHupDWUNBXf4Wnp5EGHIFWVpd+UfVjw0FV7dIyqn58M/p+6C4OgM8uf5TB7erc2RbVskVRGNcvamSVEDi1qJ8ZFdwMFXV3Iet7Q9vqSE+trMAcns0hLcPgkN5RFNkLRD529fm5vgdiEkhTlBH78wWxxiWR94EDE8GL7DkyMpJ+7fqZQLY9Kpog6Gd943LTsRGHDwFaWTnRTZNq20gEHDhxVIuk1CC7j3xn/NVEdLEH+ZW/HnAhNqRyIz7KF5J6r7blwq397XWqQmLxsdeNSXdvhb/4gys9Lxx+7olDz64HtLMqxQFIrVTfD5KGpBUA68KqRdulP9OQNEFZofYGFiAxv0YtSKqQdrUT63EJbKTWbGHt6/pZP2r0PDPi4Lptj23fsZ6BHjpbYQBSopwLYrqNr4xSrI29OTYqvHwWCXLeJQn0gqThq5mEEDtP6LlmE5WsIQP1F/hflXqed/Q8KvXARTSrsdXxprGnBQDTz84BCCtuq3uW5WNRIasRg+KsumKjHqFjIsaExmhmjZZuL+g4/1OZqzJHR7y4btvjO3csAGUs62ydXkx4f9IVDq1Ifa+qYVWyeoCqV+kCWwsyr3Y9/CpmtbDXt6Jm7XBAM6vNoDzdrE/pWf7REfv37T2w87jcw7iVVYP3btlAHGWFQ1gjEtAoWqxUHVR6kFiXgawd4SuXygo848zyqENY6UcaJGln0TutKgrysgXhyrV5DxX33KIQNqjHqLMvBVUDFVMlIT8wqClkvg3ObkARn7PRSc6sn51ZZy55ycdf3vnnbFy6nPWzStaigUqPwqvZwo0r1zbPnj903PjBHRbgNvGLsyIprr0fivUq/VGZ1b1qZbpFmtVrD8BSrZoFVFKclwdkMfUGQBEz/IrCZtozf+iU8YtGN6+Ju8jD9nMT3C59hwtCnrR5soUrxY9HYQ6dnrvLGtQwHLfP4KGzh82b233Cxil7CmjVpIm4B2r61cRt1W1mh74Alm92ZmVvWQ4zabMlW6rK67MJpsLMz6aDZTIrBTpYJjNHMNdgUcxuwWSDRW3KM99gAczoApMNFjVxt+kGyxxuAmbArc7ccAdhAAAAAElFTkSuQmCC"
+        alt="半次元"
+      />
+    </a>
+    <a href="index.html" class="site-nav_item"><span>首页</span></a>
+    <a href="illust.html" class="site-nav_item"><span>绘画</span></a>
+    <a href="novel.html" class="site-nav_item"><span>写作</span></a>
+    <a href="coser.html" class="site-nav_item"><span>COS</span></a>
+    <a href="discover.html" class="site-nav_item"><span>问答</span></a>
+    <a href="video.html" class="site-nav_item"><span>视频</span></a>
+    <div>
+      <div class="dm-popover">
+        <span>
+          <div class="app-download">
+            <a href="" class="site-nav_item">
+              <i class="iconfont icon-phone"></i>
+              下载APP
+            </a>
+          </div>
+        </span>
+        <div
+          class="dm-popover-content dm-popover-Bottom app-download-content"
+          style="width: 325px; height: 140px; top: 65px; left: 50%; margin-left: -161px;"
+        >
+          <span
+            class="dm-popover-arrow arrow-B"
+            style="top:-6px;left:50%;margin-left:-6px"
+          ></span>
+          <div>
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkAQMAAABKLAcXAAAABlBMVEX///8AAABVwtN+AAABSUlEQVQ4y43TMYrkMBAF0N8oqMTYFzDoGpXpSjKTNm4tm5rtKynTNQy+gJdOFIj+4x4m6oHy/OwF4qskClYCW6+5XadCJlOKbiK5Q+BOxCWKeP4pYTsXiv/7lN8oiF/mc6GLyjX2AmcrsE1Ft+U137u+Its+ZAC21hsrVkyVzVbgjoCjhmVLtjyfmkfHTG8L3C+sLR7nAFM6dresq2MJLpkSpqGIe5Cyvet1xVz8MmR1tqR9MOvRXuFtqW+zlDXOoTSYCuPHrhVdL3lLttZrBEf3hPBEY4xQplkImFIMSY/5emSf3gS396JrBMpmKzgmqdvjX6C3hdcDSbtGlBMFXGPQMQ6sgKkjM7QN/19/ZCqwRVG3D8XU9/Znbbd7Dv6HuFxq8Y87CZypF8Fwr2ynmoqOAI4GW+h6lYZblRWmAtvAPOJSwpZM/Tqfg5YmOXjJ/fQAAAAASUVORK5CYII="
+            />
+            <p class="tip">扫描下载AOO</p>
+          </div>
+          <b class="division"></b>
+          <div>
+            <button
+              class="dm-btn download-btn dm-btn-primary dm-btn-size-default dm-btn-theme-green"
+              style="margin-bottom:10px;padding:0 20px"
+              type="button"
+            >
+              <span>Android版本下载</span>
+            </button>
+            <button
+              class="dm-btn download-btn dm-btn-primary dm-btn-size-default"
+              style="padding:0 20px"
+              type="button"
+            >
+              <span>iPhone版本下载</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="site-nav_item" href="/bangumi/episode">
+      <span>银河英雄传说</span>
+      <img
+        class="bangumi-header"
+        src="//s3.pstatp.com/bcy/image/logo-header.ced67f.png"
+        alt="银河英雄传说"
+      />
+    </a>
+  </nav>
+  <div class="right-header">
+    <form action="/search/home" method="get">
+      <div
+        id="js-navSearch"
+        class="search-input search-input--flat l-nav__search active "
+      >
+        <input
+          type="text"
+          name="k"
+          maxlength="40"
+          placeholder="搜索COS、绘画、文、用户..."
+          autocomplete="off"
+        />
+        <input type="submit" value="" />
+        <div class="search-tip-wrapper hide">
+          <div class="search-tip">
+            搜索
+            <!-- -->
+            用户
+            <!-- -->
+            “
+            <span></span>
+            ”
+          </div>
+          <div class="search-tip">
+            搜索
+            <!-- -->
+            问答
+            <!-- -->
+            “
+            <span></span>
+            ”
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="nav-account nav-account-logout _inline_flex">
+      <div class="nav-account-item">
+        <a class="login-link" href="login.html">登录</a>
+      </div>
+      <div class="nav-account-item">
+        <a class="logout-link" href="register.html">注册</a>
+      </div>
+    </div>
+    <div class="posr js-publish-btn">
+      <button class="site-publish">
+        <i class="i-publish"></i>
+        发布
+      </button>
+      <div class="publish-loaf round-shadow posa hide">
+        <a
+          href="/item/newnote?_source_page=home&amp;_params=%7B%22entrance%22%3A%22default%22%7D"
+        >
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAdVBMVEUAAAB2yEF2yUB2ykJ4yEWA0FB3yUJ3ykJ4yUJ3yUN2ykJ6yER3y0d9yEZ3yUJ2yEN5y0X///92yD91yEJ2yEJ7zkJ2ykF1yUCz4ZaW1m6t342g2nyl3IOT1WqDzlN9zEuu34+a13SO0mOI0Fp6y0eq3Yma13NU+B35AAAAF3RSTlMAZuNIFAhWQDRRLSIaDE06JwHuX1wfkVo4AEIAAAEGSURBVEjH7dHbjoIwEIBhobQcFVh1mRYUT7vv/4gLzaKBaTuGxMRE/otezZdO2tXS0rvF10GWFkkUsk28CVyTpR5NorwbFTtv1K40Gx7GYuu54mYYelSWXQUJMzOMSbhHhvmVs69vDQsEkUNSwwTBikzDaC7M58LQDKVS0g2ZEUrokk4YG6HqoXJCMRdu567qlc88Tl1jyBHEnQHOCK5peIWu6xQGJLydeni6TeDeAeum7U/Q1ROY2qEEaKrqAv9dxjCxwiN0/bZwrx3ByAp/oE89YDOCuQ1KQB3oG/WiuOMDCm6BDWbDyxZpFgzfj+EBwLYrIgN09BLoU863QOYTjq2Wlj6rP/GqVBQ6EojHAAAAAElFTkSuQmCC"
+          />
+          <div class="text">
+            <p class="type">图片</p>
+            <p class="short">绘画、COS、手办、汉服、表情包…</p>
+          </div>
+        </a>
+        <a
+          href="/item/newarticle?_source_page=home&amp;_params=%7B%22entrance%22%3A%22default%22%7D"
+        >
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAARVBMVEUAAAD6rTD6rC/8rzH7rjL2qi/6qy/7rjH6rC/80Yz7yXn6rjT8zoX6tkn6uVD80In7zH77xnD7wWT6sj77xGz6sTv7vluPQmV9AAAACHRSTlMAZt5ZQhvrjU1b8gYAAADpSURBVEjH7dXJEsIgDIBhu6hhLdDl/R/VICrtgQzpjDM98J+4fAbSg7dW69vYQ6l+pCC6sqQgUF0PSvFLHmDXdcOdgGJXEsZLFWGUjIlqEcKliVj9G1eHv2D4cNboNqiBcr8YFectUAUPi/F40MGv3Ik2nbVivlHpBA0wYUjOQhWU+QtO8TgZqIN5NVt6oJ6ZE5XOq2G9EVfKuWrOvZ2fgQlNZA7HceGCt7QAbIjfws3AgXk10fGhFwFYMN90PQWt8HAKBmHPQROAD3P/hz3hHhQc+7J7JkjUFbogHAg3UPBelvj/2Gp9egEBOSF8OsSejgAAAABJRU5ErkJggg=="
+          />
+          <div class="text">
+            <p class="type">文字</p>
+            <p class="short">小说、漫评、段子、文章、碎碎念…</p>
+          </div>
+        </a>
+        <a
+          href="/group/newgroup?_source_page=home&amp;_params=%7B%22entrance%22%3A%22default%22%7D"
+        >
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4CAMAAACfWMssAAAAkFBMVEUAAABJjO5JjO1Jju9LlPRJjO5NkvNIjO5JjO1Ji+5VpPpJjO5JjO1JjO5KjO5JjO5Lje5Lju9qlf9Li+1Jje1Jje1Nj+9JjO1KjO1JjO1KjO5JjO5Ije5LkO5Ij+9PjO9Ji+1KjO9HjO1Ni/BIi+2av/Vim+9Uk+6Ot/NMje6Uu/SJs/N1p/GPuPOArvJ/rvL4Td6/AAAAJHRSTlMAZvJhF+ELwPaWBvnIs5JKRjwHgnRXKufZ2JtbLi0gE+4fgSEbMP8oAAABVElEQVRIx+3TyVLDMAyA4diOs+9p0r1QEE034P3fDnBw2xRZCcOBS/5bD99I7ijW2Nj/F2S+O+N85vpZ8Atm+xwucd8eyIpSM03LYtC4CH4UDRi6loAk173zlENkz8wiAkMR/c4SjJXkotwMObWsD0Q+cS+cgjwwwgzIMmJTstgxQZeGc7ExwBkNp4wZDojT0GOM4TO9fijQd8q+VT/LMRjRcM6+wkYmNHQVrBFYQdvupdMO2hIFUwQ6nIIeU1UW0gJUh/2t23c2ZQKD2xBUzeuNa0AVTjQkRsLhTbv3g75U1rbsudbmfDoeT+dG/5bsuxRzDyEYepxouMKgMLon7USAwdjgZDvPeHKOunIe3y0cxuyabXiiTLLA2i74lXluO456olXXenaVRFOPy7mbsG6pNaiNYPcVw6STX4TIn/Pl9bPqp3VaCbFMV4H6G2xrbOyPfQBb3nOcbPZhjgAAAABJRU5ErkJggg=="
+          />
+          <div class="text">
+            <p class="type">提问</p>
+            <p class="short">如何评价？如何反驳？为什么讨厌？</p>
+          </div>
+        </a>
+        <a
+          href="/item/newvideo?_source_page=home&amp;_params=%7B%22entrance%22%3A%22default%22%7D"
+        >
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA4BAMAAABaqCYtAAAAMFBMVEUAAAD/aW7/am//anD/bHD/a3L/aW//paj/lJj/fIH/n6L/mp7/jpP/h4z/dHr/b3U57ICnAAAABnRSTlMAZuNgSSYHf9E7AAAAZUlEQVQ4y2MYBQMLggWRgCmapCGypDCapCAKoJIki1oaCkhyQJJkSkMDCkiSbOiSCUNAsnsaHsnyimd4JMtrvuGRLK/FJ1m+Ep9kFbk6a/G6ljx/dk8bZFFGhiRmusWf4kcBxQAAyuvAN+S9kwMAAAAASUVORK5CYII="
+          />
+          <div class="text">
+            <p class="type">视频</p>
+            <p class="short">舞蹈、剪辑、游戏、MAD、生活...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="usr-name"></div>
+  <script>
+    var usrTem = document.getElementsByClassName('usr-name')[0];
+    usrTem.addEventListener('click',function() {
+        layer.confirm('请问是否退出登陆',function() {
+          $.cookie('uname','');
+          location.href = "index.html";
+        })
+    })
+  </script>
+</header>
+
+    <div id="leftNav">
+
+        <div class="navBox pl0">
+            <a class="workTitle" href="/novel" tilte="写作频道"><img
+                        alt="写作频道" src="//img-bcy-qnpubin.pstatp.com/Image/logo/logo_novel-cdc4dbd106.png"></a>
+        </div>
+        <div class="js-leftTags" style="height: 277px; overflow-y: hidden; outline: none;" tabindex="0">
+            <div class="navBox">
+                <div class="mt20 mb30">
+                    <p class="tagsTitle">热门同人</p>
+                    <div class="l-clearfix">
+                        <a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/9233" target="_blank">
+                            第五人格 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/6332" target="_blank">
+                            凹凸世界 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/6429" target="_blank">
+                            魔道祖师 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/6806" target="_blank">
+                            王者荣耀 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/7619" target="_blank">
+                            阴阳师手游 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/6723" target="_blank">
+                            火柴人 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/5623" target="_blank">
+                            Fate/Grand Order </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/5465"
+                                                    target="_blank">
+                            我的英雄学院 </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/3770" target="_blank">
+                            VOCALOID </a><a class="_tag _tag--left-normal mt10 mr10 db l-left" href="/circle/index/1827" target="_blank">
+                            黑塔利亚 </a></div>
+                </div>
+            </div>
+        </div>
+        <div class="nicescroll-rails nicescroll-rails-vr" id="ascrail2000"
+             style="width: 4px; z-index: 1; cursor: default; position: absolute; top: 66px; left: 223px; height: 265px; touch-action: none; display: none; opacity: 0;">
+            <div class="nicescroll-cursors"
+                 style="position: relative; top: 0px; float: right; width: 4px; height: 0px; background-color: rgb(109, 106, 119); border: none; background-clip: padding-box; border-radius: 2px; touch-action: none;"></div>
+        </div>
+
+    </div>
+    <div id="grid-content">
+        <div id="content-box">
+            <div class="gridList ovf">
+                <div class="ph10">
+                    <div class="indexSliders js-indexSliders" style="overflow: hidden;">
+                        <div class="js-slider-prev slider-prev">
+                            <img src="//img-bcy-qnpubin.pstatp.com/Image/slider-prev-37db83d061.png">
+                        </div>
+                        <div class="js-slider-next slider-next">
+                            <img src="//img-bcy-qnpubin.pstatp.com/Image/slider-next-7f2dd0255d.png">
+                        </div>
+                        <div id="slides" class="center ovf" style="overflow: hidden;">
+                            <div class="slidesjs-container" style="overflow: hidden; position: relative; width: 1080px; height: 227.368px;"><div class="slidesjs-control" style="position: relative; left: 0px; width: 1080px; height: 227.368px;"><a href="https://bcy.net/item/detail/6638029890295693576" target="_blank" class="slidesjs-slide" slidesjs-index="0" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; backface-visibility: hidden; display: none;">
+                                        <img class="js-indexSlidersItem" src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxg/4c23c6c0043d11e9b2e60b560a984f97.jpg" style="width: 100%;">
+                                    </a><a href="https://bcy.net/huodong/211" target="_blank" class="slidesjs-slide" slidesjs-index="1" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; display: none; backface-visibility: hidden;">
+                                        <img class="js-indexSlidersItem" src="https://img-bcy-qn.pstatp.com/editor/flag/c0juy/4712c1a0f45111e8892175f54370ead4.jpg" style="width: 100%;">
+                                    </a><a href="https://bcy.net/tags/name/%E6%89%8B%E5%86%99" target="_blank" class="slidesjs-slide" slidesjs-index="2" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 10; display: block; backface-visibility: hidden;">
+                                        <img class="js-indexSlidersItem" src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxa/74303b70ff9811e8bcece538ca82016f.jpg" style="width: 100%;">
+                                    </a><a href="https://bcy.net/item/detail/6637008146650890509" target="_blank" class="slidesjs-slide" slidesjs-index="3" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; display: none; backface-visibility: hidden;">
+                                        <img class="js-indexSlidersItem" src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxg/cc9e2a90043b11e9994da17dfc4006ef.jpg" style="width: 100%;">
+                                        <p class="slider_title cut">【写手推荐】玫糜</p> </a><a href="https://bcy.net/item/detail/6638113553217749261" target="_blank" class="slidesjs-slide" slidesjs-index="4" style="position: absolute; top: 0px; left: 0px; width: 100%; z-index: 0; display: none; backface-visibility: hidden;">
+                                        <img class="js-indexSlidersItem" src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxj/c001e6a0069311e9820217d5baa6d3a6.jpg" style="width: 100%;">
+                                        <p class="slider_title cut">【编辑精选】12.17-12.23新入驻写手推荐</p> </a></div></div>
+
+
+
+
+                            <div class="slider__ft"><ul class="slidesjs-pagination"><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="0" class="">1</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="1" class="">2</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="2" class="active">3</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="3" class="">4</a></li><li class="slidesjs-pagination-item"><a href="#" data-slidesjs-item="4" class="">5</a></li></ul></div></div>
+                    </div>
+                </div>
+                <div class="mt20 mb15">
+                    <ul class="workBanners l-clearfix">
+                        <li>
+                            <a href="https://bcy.net/huodong/211" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0juy/46a11410f45111e8892175f54370ead4.jpg" alt="产粮就有万元奖励等你抱走！">
+                                <p class="info mt5 pr5">产粮就有万元奖励等你抱走！</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/item/detail/6632199780976034052" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/17975/e93a62b0fb6011e88150ed55acc4e5da.jpeg" alt="2018写手年终总结请查收！">
+                                <p class="info mt5 pr5">2018写手年终总结请查收！</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/item/detail/6635424374033744141" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxd/7abe06c001f511e996815506f19c6ef5.jpg" alt="当安迷修遇到未来的自己">
+                                <p class="info mt5 pr5">当安迷修遇到未来的自己</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/item/detail/6635287204249731342" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxd/7a94109001f511e996815506f19c6ef5.jpg" alt="晓星尘魂魄苏醒知道了一切">
+                                <p class="info mt5 pr5">晓星尘魂魄苏醒知道了一切</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/item/detail/6630264276479115528" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxd/c60021e001fa11e98355d9c32dc3d2ed.jpg" alt="当你老了头发白了他还爱你吗">
+                                <p class="info mt5 pr5">当你老了头发白了他还爱你吗</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/group/list/139569" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0jxh/966ce83004cc11e9998e557620da570f.jpg" alt="来写个CP圣诞段子吧~">
+                                <p class="info mt5 pr5">来写个CP圣诞段子吧~</p> </a>
+                        </li><li>
+                            <a href="https://bcy.net/u/103019316154" target="_blank">
+                                <img src="https://img-bcy-qn.pstatp.com/editor/flag/c0jx8/9a0dd4b0fdd111e89a97e9c7ca4ecd6e.jpeg" alt="《王者？别闹！》爆笑上线">
+                                <p class="info mt5 pr5">《王者？别闹！》爆笑上线</p> </a>
+                        </li></ul>
+                </div>
+                <div class="ph10 js-centerBanner">
+                    <div id="undefined-sticky-wrapper" class="sticky-wrapper" style="height: 90px;"><header class="l-center-banner-wrap">
+                            <ul class="l-center-banner l-clearfix">
+                                <li class="active">
+                                    <a class="fz16 text" href="/novel">
+                                        热门推荐 </a>
+                                </li>
+                                <li class="">
+                                    <a class="fz16 text" href="/novel/toppost100">
+                                        本周热门 </a>
+                                </li>
+                                <li class="">
+                                    <a class="fz16 text" href="/novel/toppost100?type=lastday">
+                                        今日热门 </a>
+                                </li>
+                                <li class="">
+                                    <a class="fz16 text" href="/novel/toppost100?type=newPeople">
+                                        新人榜 </a>
+                                </li>
+                                <li>
+                                    <a class="fz16 text" href="/tags/name/小说?sort=recent" target="_blank">
+                                        最新小说 </a>
+                                </li>
+                            </ul>
+                        </header></div>
+                </div>
+                <div class="js-novelIndexList l-clearfix gridList smallCards">
+                    <li class="js-smallCards _box article" data-since="27353.467">
+                        <a href="/item/detail/6638529934656536836" class="db posr ovf" target="_blank" title="【雷安】APPLE -夜韵-">
+                            <div class="content">
+                                <h1>【雷安】APPLE</h1>
+                                <span class="db c999 fz14 lh16 mb10 cut">
+凹凸世界 | 雷安 | 雷狮 | 安迷修 | 小说 | 冬日写手产粮节 </span>
+                                <p>　　　　 　　　　18点25分。安迷修将冻僵的手指举在嘴巴前，呼着热气使得自己的手指稍微可以变热些。　　今天是12月25日，圣诞节。虽然现在时间算不上太晚，但是现在已经完全进入了冬季，…</p>
+                            </div> </a>
+                        <footer class="l-clearfix">
+                            <a href="/u/2806097" target="_blank" class="_avatar _avatar--user _avatar--xxxsm mr5 vam"><img src="https://img-bcy-qn.pstatp.com/Public/Upload/avatar/2806097/067d4d9b134244608269f72de7f4a201/fat.jpg/amiddle"></a>
+                            <a href="/u/2806097" target="_blank" class="name"><span class="fz12 lh18 username cut dib vam">-夜韵-</span></a>
+                            <div class="l-right">
+                                <i class="i-liked-gray"></i>
+                                <span class="like">116</span>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="js-smallCards _box article" data-since="27353.467">
+                        <a href="/item/detail/6633009276002500872" class="db posr ovf" target="_blank" title="病玫瑰 邱天使求抱">
+                            <div class="content">
+                                <h1>病玫瑰</h1>
+                                <span class="db c999 fz14 lh16 mb10 cut">
+第五人格 | 冬日写手产粮节 | 小说 | 虐文 | 杰佣 </span>
+                                <p>当奈布从医院走出来的时候，天有点阴沉沉的，但他并没有在意，把病单随便揉了揉，塞进了口袋。他知道要下雪了，但他并没有加快脚步，依然在街上闲逛，他 从口袋摸出一根烟，正想点燃时，突然想起自己被医生告知不再…</p>
+                            </div> </a>
+                        <footer class="l-clearfix">
+                            <a href="/u/108412005255" target="_blank" class="_avatar _avatar--user _avatar--xxxsm mr5 vam"><img src="https://img-bcy-qn.pstatp.com/Public/Upload/avatar/108412005255/02b5e011e7564f5292e8637fc518841b/fat.jpg/amiddle"></a>
+                            <a href="/u/108412005255" target="_blank" class="name"><span class="fz12 lh18 username cut dib vam">邱天使求抱</span></a>
+                            <div class="l-right">
+                                <i class="i-liked-gray"></i>
+                                <span class="like">669</span>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="js-smallCards _box article" data-since="27353.438">
+                        <a href="/item/detail/6638444281050693891" class="db posr ovf" target="_blank" title="轰出胜｜雄性荷尔蒙炸裂的幼稚园 木子-阿寕_">
+                            <div class="content">
+                                <h1>轰出胜｜雄性荷尔蒙炸裂的幼稚园</h1>
+                                <span class="db c999 fz14 lh16 mb10 cut">
+我的英雄学院 | 轰出 | 胜出 | 轰出胜 | 小说 | 冬日写手产粮节 </span>
+                                <p>避雷沙雕短篇大家都是小孩子~其实说起来，雄英幼稚园和其他幼稚园的画风不太一样，别家的幼儿园都是软萌可爱的女孩子老师，即使有男孩子一般也是刚毕业的男孩子，可雄英幼稚园可不同。&nbsp;上到园长根津下到扫地工十三…</p>
+                            </div> </a>
+                        <footer class="l-clearfix">
+                            <a href="/u/1107987" target="_blank" class="_avatar _avatar--user _avatar--xxxsm mr5 vam"><img src="https://img-bcy-qn.pstatp.com/Public/Upload/avatar/1107987/d9cc87779dd241a6a763b29b39824a58/fat.jpg/amiddle"></a>
+                            <a href="/u/1107987" target="_blank" class="name"><span class="fz12 lh18 username cut dib vam">木子-阿寕_</span></a>
+                            <div class="l-right">
+                                <i class="i-liked-gray"></i>
+                                <span class="like">130</span>
+                            </div>
+                        </footer>
+                    </li>
+                </div>
+                <div class="ph10 mb40">
+                    <a class="ajaxLoadMore curp js-novelAjaxLoadMore _hide" href="/tags/name/小说" target="_blank">查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="splite-line"></div>
+<footer id="l-footer" class="js-footer">
+  <div id="app-image">
+    <img
+      width="99"
+      height="102"
+      class="cat"
+      src="//s3.pstatp.com/bcy/image/cat-say.5282da.png"
+      alt=""
+    />
+    <img
+      width="100"
+      height="100"
+      class="qrcode"
+      src="//s3.pstatp.com/bcy/image/app-download-qrcode.6611a6.png"
+    />
+  </div>
+
+  <div class="flex-row-start">
+    <div class="l-footer__app">
+      <span class="footer-headline">半次元</span>
+      <div class="flex-row-start">
+        <ul>
+          <li><a href="/static/about">关于我们</a></li>
+          <li><a href="/static/committee">商务合作</a></li>
+          <li><a href="/static/joinus">加入我们</a></li>
+        </ul>
+        <ul>
+          <li><a href="/static/agreement">用户协议</a></li>
+          <li><a href="/static/privacy">隐私政策</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="l-footer__weixin">
+      <span class="footer-headline">官方账号</span>
+      <div class="flex-row-start">
+        <ul>
+          <li>
+            <a
+              href="http://weibo.com/bcycos"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              半次元Cosplay频道
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://weibo.com/bcyillust"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              半次元绘画频道
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://weibo.com/bcynovel"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              半次元写作频道
+            </a>
+          </li>
+        </ul>
+        <ul>
+          <li id="wechat">
+            <div class="wechat-qrcode">
+              <img
+                width="100"
+                height="100"
+                src="//s3.pstatp.com/bcy/image/wechat-qrcode.2b27f6.png"
+                alt=""
+              />
+            </div>
+            <a>微信公共号</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="l-footer__user">
+      <span class="footer-headline">传送门</span>
+      <ul>
+        <li><a href="/static/help">帮助中心</a></li>
+        <li>
+          <div class="js-lang-hover language">
+            <span class="js-switch-lang js-lang-selection">语言-中文</span>
+            <i class="i-arrow-down-gray arrow-down"></i>
+            <div class="lang-selection round-shadow">
+              <a class="_btn--block lang-option js-lang-option">中文</a>
+              <div class="division"><hr class="hr _hr" /></div>
+              <a class="_btn--block lang-option js-lang-option">English</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="l-site-record">
+    © 2018 bcy.net 版权所有
+    <a
+      href="http://www.miibeian.gov.cn/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      ICP证：鲁ICP备14021595号-1
+    </a>
+    <!-- -->
+    鲁网文[2019]0701-051号
+    <i class="i-police-record ml5"></i>
+    鲁公网安备 33010802002901号
+  </div>
+</footer>
+<div class="footer-login-register fade">
+  <div class="row flex-line">
+    <div class="flex-line">
+      <a href="/" class="db">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAoCAMAAAACNM4XAAAB41BMVEUAAAD////89fj/////////////////////////////z9z//////////////////////////////////////f3/////////////////////////////////fqv/////////////////////caP/////////////////////////////////////////////////////iLP/caT/////caT/////////////////////////////////////////////cqT/////////dqf/ean/////+/3/n7z/////////dKX/////d6j////////////////////+fq3/cKP/dKX/c6X/dab/e6v/fKr+gK7/dKX/dab/dKX/dqf/d6j/eKj9hLH/////gKn/dKf/eqr+i7X////+baH9e6v/d6f+daf/////cp7/c6X/7PP/6/L/xNn/gq//ear/aJr/////b6L/baH/ap//cKT/cqf/dKn/+vz/a6D/aJ3/caX/6/P/bqL/c6j//v//8Pb/ean/cqT/lrv/dqf/5u//4uz/m7//3ur/2Ob/zuD/ttD/oML/krn/j7f/ga7/v9b/r8z/qsn/jLX/hbD/9/r/utL/pcX/irT/fqz/yt3/9Pj/0eL/Y5vzllVXAAAAdHRSTlMABgKi9DFxONkaBYl7/N/YnMYjFg8Nf+fU0Mq0gzArHhQJ+eqWhDohzLunkXdlSUUYF/3t0sK/rYZqPTUvJ/bx792wk21CEgrjyLqOdGBZUk5MIPbf2LBQTTrGtqWbWUInIBL885mTkoaAYV0O9+fXumZjUfUDNRkAAAYZSURBVFjDxdeHV1JxFAfwLw/ENKagQKAooqk5KjN3ppXtvffeuy6PLQqilmlqjnb9qf1+vF7vAdo4rc85Mh6e8z33/u59KH7Gzg3lJ29du/a4GP/KziOnL9w+v+f41o3hcCAwcmIn/jLhyqWLT26dO3PsaGgkMhIeCgUyItvxtxRvKD+1fduJTdVHwxGWGOKJMl4ymD/f1H2sqdUbWaJUYr6hTX/0lC/duc2aujU0IieuKFS9AYpS9jO417KDN6oKKocbm0uVd4MFaqoPtm+NKMe4MpE/bCyHrMhSZwdKiMoAeFwtULSRsUJ5pye1g5Cdvsoif2g4MMeTw6cgO0TkZ8E6agR2bKF2yPi1zcKPg4+x3B8LTr9eCGaNtcZNpJeCKxzU18N64LdYLH4vPEStu9dw7TYAttpCFTtko8PLlygGRfmVKAYXoxR9FwtEtkHp9SqfRwquNdF+AN3EFVY66JsdWNn1oWVPND31Jh0LDAfjsfTo6Lj4gYheiIHwWSjW8yp1rGyUFoLxtg8MDLQX7SVy1zA3jLRbA0GTSz6FkyNfo3htSmvHWNBoPDQ7/WIilUpMRFlwciyo3qe7ZQaPx2Ika0eHp6ymSL7cTOSoBLPfSIcA7SrObJYeOAMk5RulqPHhQHo0IItPs6TJ+WekyJSs2icXMflN7XKxvje4Giv6yC0ov6WwQLJha4jXO5eYjc+nRkW54inKl5yJqfZp3Rqr1epk9bGn3VZlf+zNWOujulqzjl87qNfrO7VEfr2V+gx6pku+SR4fCsRiw+nEVHxpflwMiGJm2iZpGVNBvk9qJVuoEWpCN4AmIl/vYK2yenyxV5NJgNqesDg2E4y/jY7Fp6bjw+NzoWBAHE/QMqJL4X1Q48PVCRW7xXcQQj3x+4piP23pxV4ylULt/EjwVfRd4BV9+DydCMXeTEw+D4rvP5JaYoIypkPyPtWuzrCw0ZVedXj51TqiJnQZSUerVCkGarXlB++LiOkXqclXH1LpueRMcHz8eeJ5fCmaqZAkr5dC0pglRvdA4qFch2Hz6Kj1AIo3066WPnUn2slZjHW5wSfDgeDs61ToPS3E38zGhsX44lh8MUlEqcW3UnQq/fkVZbyU96lFm+E2klkr6WWFkasb/EkPCzl65YQCHWnBg6uAqi5AtU+xdx+nxDcLQeluFYsFZ4j5FI9JhSYX5niv+SV5n5QzNih3lP6Gysz+rqnC2lbaPYgMG+v/QR7cz4JLfAO16n2KjyXfxtX3D6mx8owpTZ8rh9panXqKbAKg91FfgfTd4LaD6VlDZGWRN2gXe9/JLiv7xKtcfM9z5eDnxE08+xobJdn80/xglSItkfEAGM0AUX0R7B2tRA6+0X6iOne9jqhW2adMf1muEvxSrvQFRZ/R5FuSTe7L3WN1MB9oX5PS4bYqO6u3vxCZ5Za0afDVtoiclx+cehd9Njrx6qWyytezK+4zGqDW6Tz8rfrN9d0CvGa3F5ymsX4zoy1R9uk7wcn5mdmFseeq28kjqBVXFFQii+qPIOmLyKaBImefVgrmniUoSSoPi/H7lH2SKcO1Ej6aCoEN8s+y25FtQ3XoF4LbspK8Tht+lmcdshVvGsoLnqEV+Jqzh8tR09DJm9/r13YJQGcLmpvkzxoNDQfYNdxtKCsF1rvMhch2Nu+QY7NJWsYWR312Lry6NR5TGXs2af39XqDGWWWWx7yFBvx0GNCbDG0NAmxWVwEkK+9TbClKajqTtaGmaUfvIHKsbS3BYbOAJifAx9u2q6O/Ug72rUe/Aagzt7fp1gN7LcixPS9YfC8FG1vN9RbDgdrLpVje5S1NpTXs2Jsdves7igCspg4wPc0CWliak3XDXXdAf0gDrNMix0V1q0ND/J+nqw9c7nX6QwVF8lquFOwwrzJ1ARr/LlM9L3WHrgSMxaSRglnFPS6nsxDLBe88E+GBoUxu9aYT27afKh/8uXXVVFR2S62tKBD4ejW0g6tcy9anW4Me3oXSbv4IbwlyHTl7P330GN+qyLkrAn6DpqwHv+TS6SM774wEwpuu4N+7GBraWo7/4MjR8AX8D/eqb+K/EG7ew7/zBQ2YLqUWqLHvAAAAAElFTkSuQmCC"
+          alt="半次元bcy.net"
+          class="footer-login-register_logo"
+        />
+      </a>
+
+      <h3 class="footer-login-register_headline">
+        每种爱都很有爱，30万有爱创作者每日产粮~
+      </h3>
+      <div class="footer-login-register_operator">
+        <label for="">马上加入&nbsp;</label>
+        <a href="">马上注册</a>
+        <a href="">登录</a>
+      </div>
+      <div class="footer-login-register_third-party">
+        <label for="">一键登录</label>
+        <a href="" title="微信登录" class="thirdLogin thirdLogin--wechat"></a>
+        <a href="" title="微博登录" class="thirdLogin thirdLogin--weibo"></a>
+        <a href="" title="QQ登录" class="thirdLogin thirdLogin--qq"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="./js/bundle.js"></script></body>
+</html>

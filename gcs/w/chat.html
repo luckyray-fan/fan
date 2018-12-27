@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chat</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: roboto;
+            background: #f5f5f5;
+        }
+        .head{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 128px;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            /*box-shadow: 0 6px 18px rgba(0,0,0,.5);*/
+            color: #fff;
+            z-index: 999;
+            font-size: 55px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            line-height: 128px;
+            text-align: center;
+        }
+        .head1{
+            width: 100%;
+            height: 128px;
+        }
+        .arrow{
+            z-index: 1000;
+            position: fixed;
+            top: 15px;
+        }
+        .arrow .mdui-icon{
+            font-size: 100px;
+            color: #fff;
+        }
+        .send{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            min-height: 128px;
+            background: #fff;
+            border-top: 1px solid lightgrey;
+            box-shadow: 0 2px 6px rgba(0,0,0,.5);
+        }
+        .send1{
+            width: 100%;
+            min-height: 128px;
+        }
+        .input{
+            position: relative;
+            min-height: 58px;
+            bottom: -32px;
+            left: 5%;
+            width: 80%;
+            border: 0;
+            border-bottom: 3px solid #909090;
+            font-size: 45px;
+            word-break: break-all;
+        }
+        .input:empty::before {
+            content: attr(aria-placeholder);
+            color:lightgrey;
+        }
+        .input:focus{
+            outline: 0;
+            border-bottom: 3px solid #4586F3;
+        }
+        #send{
+            position: relative;
+            left: 86%;
+            font-size: 80px;
+            bottom: 32px;
+            color: #909090;
+        }
+        #send:active{
+            color: #4586F3;
+        }
+        .chat_uname{
+            width: 80%;
+            height: 150px;
+            display: inline-block;
+            position: relative;
+        }
+        .uname{
+            width: 80%;
+            height: 150px;
+            display: inline-block;
+            left: 20%;
+            position: relative;
+        }
+        .headImg{
+            width: 160px;
+            height: 180px;
+            display: inline-block;
+        }
+        .headImg img{
+            width: 120px;
+            height: 120px;
+            border-radius:60px;
+            display: inline-block;
+            position: relative;
+            left: 30px;
+            top: 30px;
+        }
+        .headImg_r{
+            width: 160px;
+            height: 180px;
+            display: inline-block;
+            position: relative;
+            left: calc(100% - 160px);
+        }
+        .headImg_r img{
+            width: 120px;
+            height: 120px;
+            border-radius:60px;
+            display: inline-block;
+            position: relative;
+            left: 30px;
+            top: 30px;
+        }
+        .arrowLeft{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border: 20px solid transparent;
+            border-right: 20px solid #4586F3;
+        }
+        .arrowRight{
+            width: 0;
+            height: 0;
+            display: inline-block;
+            position: relative;
+            left: calc(100% - 360px);
+            border: 20px solid transparent;
+            border-left: 20px solid #fff;
+        }
+        .chat_text{
+            padding: 0 20px;
+            display: inline-block;
+            min-width: 100px;
+            min-height: 100px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            background: #4586F3;
+            position: absolute;
+            top: 40px;
+            word-break: break-all;
+            line-height: 100px;
+            text-align: center;
+            color: #000;
+            font-size: 55px;
+        }
+        .text{
+            padding: 0 20px;
+            display: inline-block;
+            min-width: 100px;
+            min-height: 100px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            background: #fff;
+            position: absolute;
+            top: 40px;
+            right: 196px;
+            word-break: break-all;
+            line-height: 100px;
+            text-align: center;
+            color: #000;
+            font-size: 55px;
+        }
+    </style>
+</head>
+<body>
+<div class="arrow">
+    <i class="mdui-icon material-icons">navigate_before</i>
+</div>
+<div class="head"></div>
+<div class="head1"></div>
+<div class="naka">
+    <!--<div class="chat_uname">-->
+        <!--<div class="headImg">-->
+            <!--<img src="img/head/default.jpeg" alt="">-->
+        <!--</div>-->
+        <!--<div class="arrowLeft"></div>-->
+        <!--<div class="chat_text"></div>-->
+    <!--</div>-->
+    <!--<div class="uname">-->
+        <!--<div class="headImg_r">-->
+            <!--<img src="img/head/default.jpeg" alt="">-->
+        <!--</div>-->
+        <!--<div class="arrowRight"></div>-->
+        <!--<div class="text"></div>-->
+    <!--</div>-->
+</div>
+<div class="send1"></div>
+<div class="send">
+    <div class="input" contenteditable="true" aria-placeholder="想说些什么吗"></div>
+    <i class="mdui-icon material-icons " id="send">send</i>
+</div>
+<script>
+    var d = new Date();
+    var date = parseInt(d.getTime()+"");
+
+    $(".arrow").click(function () {
+        window.history.go(-1);
+    });
+    var time = [];
+    var $chat_uname = $.cookie('chat_uname');
+    var $uname = $.cookie('usr');
+    $(".head").html($chat_uname);
+    // $.ajax({
+    //     url:"chat.php",
+    //     type:"POST",
+    //     data:{
+    //         chat_uname:$chat_uname,
+    //         uname:$uname,
+    //         date:date
+    //     },
+    //     dataType:"json",
+    //     success:function (e) {
+    //         if(e.success)
+    //         {
+    //             receive = e.msg.split(",");
+    //             // time = e.time1.split(",");
+    //             for(var i = 0;i<receive.length - 1;i++)
+    //             {
+    //                 if(receive[i+1] == 2)
+    //                 {
+    //                     appendLeft(receive[i]);
+    //                 }
+    //                 if(receive[i+1] == 1)
+    //                 {
+    //                     appendRight(receive[i]);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // });
+
+
+    function appendLeft(text) {
+        var content = "<div class=\"chat_uname\">\n" +
+            "        <div class=\"headImg\">\n" +
+            "            <img src=\"img/head/"+$chat_uname+".jpg\" alt=\"\">\n" +
+            "        </div>\n" +
+            "        <div class=\"arrowLeft\"></div>\n" +
+            "        <div class=\"chat_text\">"+text+"</div>\n" +
+            "    </div>";
+        $(".naka").append(content);
+    }
+
+    function appendRight(text) {
+        var content = "<div class=\"uname\">\n" +
+            "        <div class=\"headImg_r\">\n" +
+            "            <img src=\"img/head/"+$uname+".jpg\" alt=\"\">\n" +
+            "        </div>\n" +
+            "        <div class=\"arrowRight\"></div>\n" +
+            "        <div class=\"text\">"+text+"</div>\n" +
+            "    </div>";
+        $(".naka").append(content);
+    }
+
+    var $send = $("#send");
+    var text = $(".input");
+    var receive = [];
+    $send.click(function () {
+        appendRight($(text[0]).text());
+        $.ajax({
+            url:"send.php",
+            type:"POST",
+            data:{
+                text:$(text[0]).text(),
+                uname:$uname,
+                chat_uname:$chat_uname,
+                date:date
+            },
+            dataType:"JSON",
+            success:function (e) {
+
+            }
+        });
+        text.text("");
+    });
+    var received = [];
+    function get(){
+        $.ajax({
+            url:"chat.php",
+            type:"POST",
+            data:{
+                chat_uname:$chat_uname,
+                uname:$uname,
+                date:date
+            },
+            dataType:"json",
+            success:function (e) {
+                if(e.success)
+                {
+                    received.push(e.msg);
+                    if(received.length === 1)
+                    {
+                        receive = e.msg.split(",");
+                        // time = e.time1.split(",");
+                        for(var i = 0;i<receive.length - 1;i++)
+                        {
+                            if(receive[i+1] == 2)
+                            {
+                                appendLeft(receive[i]);
+                            }
+                            if(receive[i+1] == 1)
+                            {
+                                appendRight(receive[i]);
+                            }
+                        }
+                    }
+                    else if(e.msg != received[received.length-2])
+                    {
+                        $(".naka").empty();
+                        receive = e.msg.split(",");
+                        // time = e.time1.split(",");
+                        for(var i = 0;i<receive.length - 1;i++)
+                        {
+                            if(receive[i+1] == 2)
+                            {
+                                appendLeft(receive[i]);
+                            }
+                            if(receive[i+1] == 1)
+                            {
+                                appendRight(receive[i]);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    get();
+    setInterval("get()",3000);
+</script>
+</body>
+</html>

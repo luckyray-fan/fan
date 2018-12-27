@@ -1,0 +1,23 @@
+.smallCards .ganswer .content p, .smallCards .video .content p, .smallCards .article .content p {
+  font-size: 14px;
+  line-height: 22px;
+  max-height: 178px;
+  overflow: hidden;
+  color: #666;
+}
+.smallCards .ganswer .content h1, .smallCards .video .content h1, .smallCards .article .content h1 {
+  font-size: 18px;
+  line-height: 24px;
+  max-height: 48px;
+  overflow: hidden;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.smallCards .ganswer .content, .smallCards .video .content, .smallCards .article .content {
+  width: 170px;
+  height: 260px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 20px 15px;
+}

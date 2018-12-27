@@ -1,0 +1,174 @@
+.bgAll {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: url(//img-bcy-qnpubin.pstatp.com/Image/bg_cat4-17420cacdf.png)
+    repeat;
+  z-index: 0;
+  overflow-y: scroll;
+}
+.form_center.resetPassword,
+.form_center.getPassword,
+.form_center.register,
+.form_box.resetPassword,
+.form_box.getPassword,
+.form_box.register {
+  padding: 40px;
+}
+.form_center {
+  box-sizing: border-box;
+  position: absolute;
+  width: 480px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.shareBox,
+.smallCards li:hover,
+.publish-loaf,
+.viewAppDown,
+.form_center {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+}
+.form_center .inputLine.error,
+.form_box .inputLine.error {
+  padding-right: 35px;
+}
+
+.form_center .inputLine,
+.form_box .inputLine {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.form_center .inputLine.error input,
+.form_box .inputLine.error input {
+  border-color: #ff6fa2;
+}
+
+.form_center .inputLine .input,
+.form_box .inputLine .input {
+  box-sizing: border-box;
+  width: 400px;
+  height: 44px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+}
+input[type='text'],
+input[type='password'],
+textarea {
+  border-radius: 4px;
+  padding: 0 0 0 5px;
+  border: 1px solid #e5e5e5;
+  line-height: 24px;
+}
+.form_center .inputLine .input_error,
+.form_box .inputLine .input_error {
+  font-size: 14px;
+  line-height: 1;
+  color: #e74747;
+}
+.form_center #codeBtn,
+.form_box #codeBtn {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  height: 30px;
+  width: 72px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+._btn--red[disabled],
+._btn--red[disabled]:hover {
+  cursor: text;
+  border: 1px solid #bdbdbd;
+  background-color: #bdbdbd;
+  color: #fff;
+}
+._btn--negative,
+._btn--negative._btn--no-hover:hover,
+._btn--negative[type='submit'],
+._btn--negative[type='submit']._btn--no-hover:hover,
+._btn--negative[type='button'],
+._btn--negative[type='button']._btn--no-hover:hover {
+  border: 1px solid #bdbdbd;
+  background-color: #bdbdbd;
+  color: #fff;
+}
+._btn--red,
+._btn--red[type='submit'],
+._btn--red[type='button'] {
+  border: 1px solid #ff6fa2;
+  background-color: #ff6fa2;
+  color: #fff;
+}
+._btn,
+.newBtn {
+  box-sizing: border-box;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  background-image: none;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  transition: background-color 0.3s;
+}
+.form_center .inputLine .input_error,
+.form_box .inputLine .input_error {
+  font-size: 14px;
+  line-height: 1;
+  color: #e74747;
+}
+
+.form_center .verify-img,
+.form_box .verify-img {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  height: 42px;
+  width: 110px;
+  padding: 0;
+  text-align: center;
+  border-radius: 4px;
+  z-index: 3;
+}
+.form_center .inputLine .input_error,
+.form_box .inputLine .input_error {
+  font-size: 14px;
+  line-height: 1;
+  color: #e74747;
+}
+.form_center .inputLine .remember,
+.form_box .inputLine .remember {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+._btn--long-red {
+  display: inline-block;
+  background-color: #ff6fa2;
+  color: white;
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 44px;
+  transition: background-color 0.3s;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-appearance: button;
+  border: none;
+  text-align: center;
+}

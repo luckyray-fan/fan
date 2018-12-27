@@ -1,0 +1,196 @@
+.page-videoList {
+  width: 1200px;
+  min-width: 1200px;
+  justify-content: space-around;
+  margin: 70px auto 0;
+}
+.page-videoList .list-wrapper {
+  width: 870px;
+  float: left;
+}
+.page-videoList .list-inner {
+  width: 100%;
+  border-radius: 4px;
+  /*padding: 0 20px;*/
+  background-color: #fff;
+}
+.page-videoList .list-inner .item:last-child {
+  height: 130px;
+  border-bottom: none;
+}
+
+.page-videoList .list-inner .item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 133px;
+  border-bottom: 3px solid #f5f5f5;
+}
+.page-videoList .list-inner .item .video-cover {
+  position: relative;
+  width: 160px;
+  height: 90px;
+  margin-right: 15px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-clip: border-box;
+  border-radius: 4px;
+}
+.page-videoList .list-inner .item .video-cover .video-duration {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  display: inline-block;
+  text-align: center;
+  padding: 0 3px;
+  line-height: 18px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 12px;
+}
+.page-videoList .list-inner .item .video-info {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  height: 90px;
+}
+.page-videoList .list-inner .item .video-info .title {
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page-videoList .list-inner .item .video-info .intro {
+  height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #333;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.page-videoList .list-inner .item .video-info .data {
+  display: flex;
+  height: 20px;
+  align-items: center;
+  font-size: 14px;
+  color: #999;
+  margin-top: 10px;
+}
+.page-videoList .list-inner .item .video-info .data .avatar {
+  position: relative;
+}
+
+.page-videoList .list-inner .item .video-info .data a {
+  color: #999;
+  cursor: pointer;
+}
+.page-videoList .list-inner .item .video-info .data .avatar img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin-right: 6px;
+}
+.page-videoList .list-inner .item .video-info .data .avatar span {
+  vertical-align: middle;
+}
+.page-videoList .list-inner .item .video-info .data .divide-dot {
+  margin: auto 6px;
+}
+.page-videoList .list-inner .item .video-info .data a {
+  color: #999;
+  cursor: pointer;
+}
+.page-videoList .pannels {
+  width: 300px;
+  float: right;
+}
+.video-rankList {
+  width: 100%;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.video-rankList .head .name {
+  font-size: 16px;
+  color: #333;
+}
+
+.video-rankList .head .rank-type span {
+  cursor: pointer;
+  margin-left: 15px;
+}
+.video-rankList .head .rank-type span.active {
+  color: #333;
+}
+
+.video-rankList .list li {
+  display: flex;
+  align-items: top;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.video-rankList .list li.top .no {
+  background-color: #ff6fa2;
+}
+
+.video-rankList .list li .no {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  margin-right: 7px;
+  text-align: center;
+  border-radius: 2px;
+  background-color: #ccc;
+  color: #fff;
+  font-weight: 500;
+}
+.video-rankList .list li.top img {
+  width: 80px;
+  height: 45px;
+  border-radius: 2px;
+  margin-right: 7px;
+}
+.video-rankList .list li.top .title {
+  height: 36px;
+}
+.video-rankList .list li .title {
+  flex: 1;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.38;
+  overflow: hidden;
+  height: 18px;
+}
+.video-rankList .head {
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.video-rankList .head .rank-type {
+  float: right;
+  font-size: 12px;
+  color: #999;
+  letter-spacing: -0.6px;
+}
+.video-rankList .head .rank-type span:first-child {
+  margin-left: 0;
+}

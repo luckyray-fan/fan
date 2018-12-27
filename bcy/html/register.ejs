@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+</head>
+<body>
+<%= require('./template/nav.html') %>
+<div class="js-hideFooter bgAll posr">
+    <div class="form_center register">
+        <h1 class="fz24 lh1 fwb mb30" >现在就加入O次元</h1>
+        <form class="form_box" id="regform">
+            <div class="inputLine" id="regform">
+                <input
+                        type="text"
+                        placeholder="您的昵称"
+                        id="uname"
+                        maxlength="11"
+                        class="input"
+                        name="mobile"
+                        require="true"
+                        datatype="mobile"
+                        msg=""
+                />
+            </div>
+            <div class="inputLine">
+                <input
+                        type="text"
+                        placeholder="您的邮箱"
+                        id="email"
+                        maxlength="11"
+                        class="input"
+                        name="mobile"
+                        require="true"
+                        datatype="mobile"
+                        msg="手机号码格式错误"
+                />
+                <!--<p class="input_error js-tip-mobile mt10">手机号码格式错误</p>-->
+            </div>
+            <div class="inputLine posr">
+                <input
+                        class="input"
+                        placeholder="密码"
+                        id="pass"
+                        maxlength="4"
+                        type="text"
+                        name="code"
+                />
+                <!--<button-->
+                <!--id="codeBtn"-->
+                <!--class="_btn _btn&#45;&#45;red _btn&#45;&#45;negative _btn&#45;&#45;no-hover"-->
+                <!--data-counting="false"-->
+                <!--disabled="disabled"-->
+                <!--&gt;-->
+                <!--点击获取-->
+                <!--</button>-->
+                <p class="input_error js-tip-code hide mt10"></p>
+            </div>
+            <div class="inputLine posr js-verify-img-wrap hide">
+                <input
+                        class="input"
+
+                        placeholder="密码"
+                        autocomplete="off"
+                        maxlength="4"
+                        type="text"
+                        name="pcode"
+                />
+                <img src="" class="js-verify-img hide verify-img"/>
+                <p class="input_error js-tip-pcode hide mt10"></p>
+            </div>
+            <div class="inputLine">
+                <label>
+                    <input
+                            name="remember"
+                            class="mr8 remember"
+                            id="remember"
+                            type="checkbox"
+                            value="1"
+                            require="true"
+                            datatype="require"
+                            msg="请确认同意用户协议和隐私政策"
+                            checked=""
+                    />
+                    <span class="c666 fz14">
+                我已经阅读并同意
+                <a target="_blank" href="/static/agreement">
+                  《半次元用户协议》
+                </a>
+                和
+                <a target="_blank" href="/static/privacy">《隐私政策》</a>
+              </span>
+                </label>
+                <p class="input_error js-tip-remember hide mt10"></p>
+            </div>
+            <input
+                    id="nextBtn"
+                    class="_btn--long-red mt10"
+                    type="button"
+                    value="创建账号"
+                    onclick="register()"
+            />
+        </form>
+    </div>
+</div>
+</body>
+
+<script>
+  function register() {
+    var uname = document.getElementById('uname');
+    var email = document.getElementById('email');
+    var pass = document.getElementById('pass');
+    var sendText = "uname="+uname.value+"&email="+email.value+"&pass="+pass.value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/register.php", true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(sendText);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var con = JSON.parse(xhr.responseText);
+        if(con.s) {
+          layer.msg('欢迎登陆 '+ uname.value);
+          $.cookie('uname',uname.value);
+          setTimeout('location.href = "index.html"',2000);
+        }else{
+          layer.alert('注册失败',con.msg);
+        }
+      }
+    }
+  }
+
+</script>
+</html>

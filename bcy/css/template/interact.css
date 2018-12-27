@@ -1,0 +1,94 @@
+/* nav start */
+#l-header .headerItem.active,
+#l-header .headerItem:hover,
+#l-header .site-nav_item.active,
+#l-header .site-nav_item:hover {
+  color: #ff6fa2;
+}
+#l-header .l-nav__search.active,
+#l-header .l-nav__search:focus {
+  outline: none;
+  border-color: #ff6fa2;
+}
+#l-header .l-nav__search.active input[type='text'],
+#l-header .l-nav__search:focus input[type='text'] {
+  background-color: #fff !important;
+}
+.nav-account-logout .nav-account-item:hover a {
+  color: #ff6fa2;
+}
+#l-header .site-publish:hover {
+  background-color: #ff4081;
+}
+#l-header .l-nav__search.active input[type=text], #l-header .l-nav__search:focus input[type=text] {
+  background-color: #fff!important;
+}
+.dm-popover:hover .dm-popover-content.dm-popover-Bottom.app-download-content{
+  visibility: visible;
+  z-index: 101;
+}
+/* nav end */
+
+/* footer start */
+.footer-login-register__operator a:hover {
+  background-color: #ff4081;
+}
+/* footer end */
+
+/* slick-dots start */
+.dm-carousel .slick-slider .slick-dots .dm-dots li.slick-active button {
+  background-color: #ff5f98;
+}
+/* slick-dots end */
+
+/* feed start */
+.item .bottom .zan:hover {
+  cursor: pointer;
+}
+
+.item .bottom .zan:hover .normal {
+  color: #ff6fa2;
+  background-image: url(//s3.pstatp.com/bcy/image/sprite-img.6fb4bd.png);
+  background-position: -24px -224px;
+}
+
+.item .bottom .zan:hover .active {
+  color: #ff6fa2;
+  background-image: url(//s3.pstatp.com/bcy/image/sprite-img.6fb4bd.png);
+  cursor: default;
+  background-position: -48px -224px;
+}
+
+.item .bottom .zan:hover span {
+  color: #ff6fa2;
+}
+
+.item .bottom .zan:hover span.textactive {
+  cursor: default;
+}
+.item .bottom .discuss:hover span {
+  color: #ff6fa2;
+}
+.item .tag_box .tags .tag.tag-event {
+  background-color: #ffdfea;
+  color: #ff6fa2;
+}
+/* feed end */
+/* leftNav start */
+.i-arrow-next-left:hover {
+  color: #fff;
+}
+._tag--left-event:hover {
+  color: #ff5f98;
+  background-color: #7c415b;
+}
+
+._tag--left-normal:hover,
+._tag--left-event:hover {
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+a:hover {
+  color: #ff6fa2;
+}
+/* leftNav end */

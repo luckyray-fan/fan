@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>信息</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/mdui/0.4.1/css/mdui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/mdui/0.4.1/js/mdui.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: roboto;
+        }
+        .head{
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            height: 128px;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            /*box-shadow: 0 6px 18px rgba(0,0,0,.5);*/
+            color: #fff;
+            font-size: 55px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            line-height: 128px;
+            text-align: center;
+        }
+        .head1{
+            z-index: 999;
+            width: 100%;
+            height: 128px;
+
+        }
+        .foot{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 120px;
+            background: #fff;
+            border-top: 2px solid lightgrey;
+            box-shadow: 0 6px 18px rgba(0,0,0,.5);
+        }
+        .mes{
+            display: inline-block;
+            color: #909090;
+            position: relative;
+            left: 90px;
+            top: 0;
+            height: 90px;
+            width: 90px;
+        }
+        .mes:active
+        {
+            color: #4586F3;
+        }
+        .mes .mdui-icon{
+            font-size: 84px;
+        }
+        .map{
+            display: inline-block;
+            color: #909090;
+            position: absolute;
+            left: calc(50% - 38px);
+            top: 0;
+            height: 90px;
+            width: 90px;
+        }
+        .map:active{
+            color: #4586F3;
+        }
+        .map .mdui-icon{
+            font-size: 84px;
+        }
+        .per{
+            display: inline-block;
+            color: #909090;
+            position: absolute;
+            right: 90px;
+            top: 0;
+            height: 90px;
+            width: 90px;
+        }
+        .per:active{
+            color: #4586F3;
+        }
+        .per .mdui-icon{
+            font-size: 84px;
+        }
+        .font{
+            color: #909090;
+            font-size: 30px;
+            text-align: center;
+            letter-spacing: 6px;
+        }
+        #blue .font{
+            color: #4586F3;
+        }
+        #blue .mdui-icon{
+            color: #4586F3;
+        }
+
+        .set{
+            height: 160px;
+            width: 100%;
+            border: 0;
+            position: relative;
+            border-bottom: 1px solid #909090;
+            font-size: 55px;
+            display: inline-block;
+        }
+        .set img{
+            width: 120px;
+            height: 120px;
+            border-radius:60px;
+            display: inline-block;
+            position: relative;
+            left: 30px;
+            top: 20px;
+        }
+        .name{
+            position: absolute;
+            left: 180px;
+            top: 20px;
+            font-size: 55px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="head"> 消息</div>
+<div class="head1"></div>
+<div class="naka">
+
+</div>
+<div class="foot">
+    <div class="mes" id="blue">
+        <i class="mdui-icon material-icons">send</i>
+        <div class="font">信息</div>
+    </div>
+    <div class="map">
+        <i class="mdui-icon material-icons">map</i>
+        <div class="font">地图</div>
+    </div>
+    <div class="per">
+        <i class="mdui-icon material-icons">person_outline</i>
+        <div class="font">个人</div>
+    </div>
+</div>
+<script>
+    $(".map").click(function () {
+        $(location).attr("href","index.html");
+    });
+    var $per = $(".per");
+    $per.click(function (e) {
+        $(location).attr("href","personal.html");
+    });
+    $name = $.cookie('usr');
+    if(!$name)
+    {
+        alert('请先登录');
+        $(location).attr('href','login.html')
+    }
+    function aja() {
+        var chat_uname = "1";
+        $.ajax({
+            url:"initNew.php",
+            type:"POST",
+            data:{
+                name:$name
+            },
+            dataType:"json",
+            success:function (e) {
+                if(e.success)
+                {
+                    $(".naka").empty();
+                    chat_uname = e.chat_uname;
+                    divide(chat_uname);
+                }else{
+                    alert('与服务器故障');
+                }
+            }
+        });
+    }
+    function divide(x){
+        var arr = [];
+        arr = x.split(",");
+        var arr1 = [];
+        for(var z = 0;z<arr.length;z++)
+        {
+            if(arr[z])
+            {
+                arr1.push(arr[z]);
+                break;
+            }
+            z++;
+        }
+        for(var j = 0;j<arr.length;j++)
+        {
+            if(!arr[j])
+                continue;
+            for(var k = 0;k<arr1.length;k++)
+            {
+                if(arr[j]!==arr1[k])
+                {
+                    if(k===arr1.length-1)
+                        arr1.push(arr[j])
+                }else{
+                    break;
+                }
+            }
+        }
+        for(var i = 0;i<arr1.length;i++)
+        {
+            var content ="<div class=\"set"+" "+arr1[i]+"\">\n" +
+                "        <img src=\"img/head/"+arr1[i]+".jpg\" alt=\"\">\n" +
+                "        <div class=\"name\">"+arr1[i]+"</div>\n" +
+                "    </div>";
+            $(".naka").append(content);
+            (function (e)
+            {
+                $("."+arr1[i]).on("click",function (){
+                $.cookie('chat_uname',arr1[e]);
+                $(location).attr('href','chat.html');
+            })})(i)
+        }
+    }
+    aja();
+    setInterval("aja()",3000);
+</script>
+</body>
+</html>
